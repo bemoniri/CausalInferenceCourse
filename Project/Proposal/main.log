@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.7.15)  9 NOV 2018 13:42
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.7.15)  9 NOV 2018 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,27 +1584,27 @@ LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
 (Font)              scaled to size 15.84007pt on input line 13.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 11.00006pt on input line 26.
+(Font)              scaled to size 11.00006pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 7.70004pt on input line 26.
+(Font)              scaled to size 7.70004pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 5.50003pt on input line 26.
+(Font)              scaled to size 5.50003pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 11.00006pt on input line 26.
+(Font)              scaled to size 11.00006pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 7.70004pt on input line 26.
+(Font)              scaled to size 7.70004pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 5.50003pt on input line 26.
+(Font)              scaled to size 5.50003pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 11.00006pt on input line 26.
+(Font)              scaled to size 11.00006pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 7.70004pt on input line 26.
+(Font)              scaled to size 7.70004pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 5.50003pt on input line 26.
+(Font)              scaled to size 5.50003pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 7.70004pt on input line 40.
+(Font)              scaled to size 7.70004pt on input line 41.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 5.50003pt on input line 40.
+(Font)              scaled to size 5.50003pt on input line 41.
  [1
 
 ] [2]
@@ -1620,7 +1620,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  31884 strings out of 493591
  630363 string characters out of 6143546
- 675666 words of memory out of 5000000
+ 674666 words of memory out of 5000000
  34721 multiletter control sequences out of 15000+600000
  11624 words of font info for 98 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
