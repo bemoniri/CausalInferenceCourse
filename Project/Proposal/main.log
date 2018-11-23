@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.7.15)  9 NOV 2018 19:44
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  19 NOV 2018 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1469,33 +1469,29 @@ as'Yas' on input line 28.
 \symnew@mathit@font@digits=\mathgroup9
 \symnew@mathrm@font@digits=\mathgroup10
 \c@Question=\count292
-) (./main.aux
-
-LaTeX Warning: Label `review' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 11.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 13.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 13.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    ... okay on input line 13.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box74
@@ -1538,90 +1534,86 @@ ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 19.0081pt on input line 12.
+(Font)              scaled to size 19.0081pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
-(Font)              scaled to size 19.0081pt on input line 12.
+(Font)              scaled to size 19.0081pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 13.20007pt on input line 12.
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+(Font)              scaled to size 13.20007pt on input line 14.
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 12.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 14.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 13.20007pt on input line 12.
+(Font)              scaled to size 13.20007pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 8.80005pt on input line 12.
+(Font)              scaled to size 8.80005pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 6.60004pt on input line 12.
+(Font)              scaled to size 6.60004pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 13.20007pt on input line 12.
+(Font)              scaled to size 13.20007pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 8.80005pt on input line 12.
+(Font)              scaled to size 8.80005pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 6.60004pt on input line 12.
+(Font)              scaled to size 6.60004pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 13.20007pt on input line 12.
+(Font)              scaled to size 13.20007pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 8.80005pt on input line 12.
+(Font)              scaled to size 8.80005pt on input line 14.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 6.60004pt on input line 12.
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 12.
+(Font)              scaled to size 6.60004pt on input line 14.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 14.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 15.84007pt on input line 13.
+(Font)              scaled to size 15.84007pt on input line 15.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
-(Font)              scaled to size 15.84007pt on input line 13.
+(Font)              scaled to size 15.84007pt on input line 15.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 11.00006pt on input line 27.
+(Font)              scaled to size 11.00006pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 7.70004pt on input line 27.
+(Font)              scaled to size 7.70004pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 5.50003pt on input line 27.
+(Font)              scaled to size 5.50003pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 11.00006pt on input line 27.
+(Font)              scaled to size 11.00006pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 7.70004pt on input line 27.
+(Font)              scaled to size 7.70004pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 5.50003pt on input line 27.
+(Font)              scaled to size 5.50003pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 11.00006pt on input line 27.
+(Font)              scaled to size 11.00006pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 7.70004pt on input line 27.
+(Font)              scaled to size 7.70004pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 5.50003pt on input line 27.
+(Font)              scaled to size 5.50003pt on input line 35.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 7.70004pt on input line 41.
+(Font)              scaled to size 7.70004pt on input line 49.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 5.50003pt on input line 41.
+(Font)              scaled to size 5.50003pt on input line 49.
  [1
 
 ] [2]
-(./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- )
+(./main.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31884 strings out of 493591
- 630363 string characters out of 6143546
+ 31886 strings out of 493591
+ 630375 string characters out of 6143545
  674666 words of memory out of 5000000
- 34721 multiletter control sequences out of 15000+600000
+ 34723 multiletter control sequences out of 15000+600000
  11624 words of font info for 98 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  57i,14n,63p,10415b,13244s stack positions out of 5000i,500n,10000p,200000b,80000s
