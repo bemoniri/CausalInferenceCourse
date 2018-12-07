@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  8 DEC 2018 00:03
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  8 DEC 2018 00:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1629,7 +1629,7 @@ File: plt2.png Graphic file (type QTm)
 Here is how much of TeX's memory you used:
  31909 strings out of 493591
  630585 string characters out of 6143545
- 676663 words of memory out of 5000000
+ 676664 words of memory out of 5000000
  34738 multiletter control sequences out of 15000+600000
  11624 words of font info for 98 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191

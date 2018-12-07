@@ -218,7 +218,7 @@ for i in [-4, -3, -2, -1, 0, 1, 2]:
 for alpha in alpha_list:
     Missing_array = []
     Recall_array = []
-    for i in range(30):    
+    for i in range(100):    
         Graph = randomDAG(20, 0.2, 0.1, 1)
         data = genData(Graph, 1000)
         estimated = pc(data, alpha)
@@ -255,7 +255,7 @@ for i in [-4, -3, -2, -1, 0, 1, 2]:
 for alpha in alpha_list:
     Missing_array = []
     Recall_array = []
-    for i in range(30):    
+    for i in range(100):    
         Graph = randomDAG(20, 0.2, 0.1, 1)
         data = genData(Graph, 1000)
         estimated = pc_stable(data, alpha)
