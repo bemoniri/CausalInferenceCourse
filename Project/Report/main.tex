@@ -1,0 +1,580 @@
+\documentclass{article}
+\input{structure.tex} 
+\title{
+\textbf{\lr{Additive Noise Models: Identifiability, Learning Algorithms, Hidden Variables and Cycles}}
+} 
+\author{بهراد منیری\\دانشکده‌ی مهندسی برق  دانشگاه صنعتی شریف}
+\date{\texttt{bemoniri@ee.sharif.edu}}
+%----------------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\tableofcontents
+\section{قضایای قابل‌شناسایی بودن}
+در این بخش به بررسی مدل‌های نویز جمعی در حالاتی که هیچ 
+\lr{Common Cause}
+مشاهده‌نشده‌ای در سیستم وجود ندارد می‌پردازیم. در مدل‌های نویز جمعی، هدف محدود کردن مجموعه‌ی توابعی است که در آن به جست‌و‌جوی توابع تولید کننده  
+\lr{SCM}
+می‌گردیم.
+مراجع ما در این بخش، مقالات 
+\cite{hoyer}،
+\cite{continous}
+و
+\cite{postnonlinear}
+هستند. این مقالات به بررسی قضایای 
+\lr{Identifiability}
+در مدل‌های نویز جمعی پرداخته اند. ما در این بخش به بررسی قضایای مطرح شده در این مقالات پرداخته و در آخر محدودیت‌های  آن‌ها را با هم مقایسه ‌می‌کنیم.
+\begin{den}
+ یک مدل نویز جمعی پیوسته را به صورت زیر تعریف می‌شود:
+
+\begin{equation}
+S_j:\;\;\;S_j=f_j(\textbf{PA}_j) + N_j, \;\;\;\;\;\; j = 1,2,...,p
+\end{equation}
+که در آن 
+$\textbf{PA}_j$
+مجموعه‌ی والدین $X_j$ هستند و متغیرهای نویز، $N_j$ دارای چگالی‌احتمالی اکیداً مثبت می‌باشند و مستقل‌اند. همچنین در این بخش فرض می‌شود گراف مولد داده‌ها یک 
+\lr{DAG}
+است. 
+
+\end{den}
+\begin{thm}
+درمدل‌های نویز جمعی، شرط  
+\lr{ Causal Minimality}
+معادل این است که توابع $f_j$ نسبت به هیچ یک از متغیرهایشان ثابت نباشند.
+\end{thm}
+
+\subsection{حالت دو متغیره}
+\lr{Hoyer et al.}
+در مقاله‌ی 
+\cite{hoyer}
+قضیه‌ی زیر را در مورد قابل شناسایی بودن 
+\lr{ANM}
+در حالت دو متغیره اثبات می‌کند. در ادامه به بررسی دقیق این قضیه پرداخته و بحث خواهیم کرد که در چه شرایطی، در یک مدل جمعی، از روی چگالی احتمال مشترک قادر به شناسایی کامل جهت علّی نیستیم.
+\begin{thm} \label{hoyer}
+فرض کنید داشته باشیم
+
+\begin{equation*}
+\begin{cases}
+X = N_x\\
+Y = f(X) + N_y
+\end{cases}
+\end{equation*}
+اگر برای هر 
+$x, y$ 
+با شرط
+ $\nu''(y-f(x))f'(x)\neq 0$ 
+  حل معادله‌ی دیفرانسیل زیر نباشد:
+\begin{align}\label{DGL}
+\xi'''&=   \xi''  \left(-\frac{\nu'''f'}{\nu''}
++\frac{f''}{f'}\right) 
+-2 \nu''f''f' %\notag\\
++\nu'f'''+\frac{\nu'\nu'''f''f'}{\nu''}-\frac{\nu'(f'')^2}{f'}\,,
+\end{align}
+که در آن 
+$\xi := \log(p_X)$ 
+و
+$\nu := \log(p_{N_{Y}})$
+است، مدلی با نویز جمعی پیوسته در جهت دیگر وجود نداشته و جهت علّی، با داشتن توزیع مشترک متغیر‌ها قابل شناسایی است. در شرط فوق، آرگومان توابع و مشتق توابع $\nu$، 
+$\xi $
+و $f$ به ترتیب 
+$y-f(x)$،
+$x$
+و  
+$x$
+هستند.
+\end{thm}
+
+\begin{proof}%
+فرض کنید که گراف قابل شناسایی نباشد و دو گراف با جهت‌های متضاد بر این داده‌ها قابل برازش باشد. در این صورت خواهیم داشت:
+	\begin{equation}\label{backward}
+	p(x,y)=p_n(y-f(x))p_x(x) = p_{\tilde n}(x-g(y))p_{y}(y)\,.
+	\end{equation}
+$\pi$
+را برابر تابع 
+\lr{log-liklihood}
+در نظر بگیرید:
+	\begin{equation}\label{piDef}
+	\pi(x,y):= \log p(x,y)=\nu (y-f(x))+\xi (x)\,,
+	\end{equation}
+	از طرف دیگر، بنا بر معادله‌ی 
+	\eqref{backward}
+	داریم:
+	\begin{equation}
+	\pi(x,y)= \tilde \nu (x-g(y))+\eta (y)
+	\end{equation}
+	
+	با  مشتق گیری از این  معادله خواهیم داشت:
+	\[
+	\frac{\partial^2 \pi}{\partial x\partial y} =-\tilde \nu''(x-g(y)) g'(y) \quad
+	\hbox{ و } \quad
+	\frac{\partial^2 \pi}{\partial x^2}=\tilde \nu''(x-g(y))\,.
+	\]
+در نتیجه داریم:
+	\begin{equation}\label{wichtig}
+	\frac{\partial}{\partial x}\left( \frac{\partial^2 \pi/\partial x^2}{
+		\partial^2 \pi/(\partial x \partial y) }\right) = -\frac{\partial }{\partial x}g'(y)=0\,.
+	\end{equation}
+از معادله‌ی	
+\eqref{piDef} 
+به دست می‌آید:
+	\begin{equation}\label{partial1}
+	\frac{\partial^2 \pi}{\partial x\partial y} =-\nu''(y-f(x))f'(x)\,,
+	\end{equation}
+	و همچنین
+	\begin{equation}\label{partial2}
+	\frac{\partial^2 \pi}{\partial x^2}=\frac{\partial}{\partial x}
+	\left(-\nu'(y-f(x))f'(x)+\xi'(x)\right)
+	= \nu'' (f')^2 -\nu'f''+ \xi''\,, 
+	\end{equation}
+که در آن آرگومان‌ها برای خوانایی بیشتر حذف شده‌اند. از معادله‌ی  
+\eqref{partial1}
+و 
+\eqref{partial2}
+
+	\begin{align*}
+	\frac{\partial}{\partial x}
+	\left(\frac{\frac{\partial^2 \pi}{\partial x^2}}{\frac{\partial^2 \pi}{\partial x \partial y}}\right)  = &-2f'' +\frac{\nu'f'''}{\nu''f'}- \xi'''   \frac{1}{\nu'' f'}+
+	\frac{\nu'\nu'''f''}{(\nu'')^2}%\\
+	%&\quad 
+	-\frac{\nu'(f'')^2}{\nu''(f')^2}
+	-\xi''\frac{\nu'''}{(\nu'')^2}+\xi''\frac{f''}{\nu'' (f')^2}  \,.
+	\end{align*}
+	بر اساس معادله‌ی 	\eqref{wichtig}، عبارت فوق برابر صفر است یعنی: 
+	\begin{equation*}
+	\xi'''=   \xi''  \left(-\frac{\nu'''f'}{\nu''}
+	+\frac{f''}{f'}\right) 
+	-2 \nu''f''f' %0\notag\\
+	%&\qquad \qquad \qquad 
+	+\nu'f'''+\frac{\nu'\nu'''f''f'}{\nu''}-\frac{\nu'(f'')^2}{f'}
+	\end{equation*}
+با بازنویسی این معادله بر حسب توابع اصلی مساله داریم:
+	\begin{equation*}
+	p_x'''=   p_x''  p_n'' f'\left(-\frac{p_n'''}{(p_n'')^2}+\frac{f''}{p_n''(f')^2}\right) 
+	+
+	p_n''f'\left(-2f'' +\frac{p_n'f'''}{p_n''f'}+\frac{p_n'p_n'''f''}{(p_n'')^2}-\frac{p_n'(f'')^2}{p_n''(f')^2}\right).
+	\end{equation*}
+\end{proof}
+سوال مهمی که در این‌ا مطرح می‌شود این است که در چه شرایطی، قادر به تشخیص جهت از روی چگال مشترک نیستیم. قضیه‌ی زیر به ما می‌گوید که در صورتی که به صورت کاملاً تصادفی از مدل‌های نویز جمعی یک مدل را انتخاب کنیم، احتمال قابل شناسایی نبودن جهت علّی صفر است.
+
+\begin{thm}
+اگر برای مجموعه‌ی توابع $f$ و توزیع نویز‌های خارجی داده‌شده، برای یک $y$ خاص،
+$v''(y-f(x))f'(x)=0$
+شمارا جواب داشته باشد، یا جوابی نداشته باشد، توزیع 
+$\textbf{X}$
+در یک فضای سه بعدی زندگی می‌کند.
+\end{thm}
+از آنجا که مجموعه‌ی توزیع‌های پیوسته بی‌نهایت بعدی است، برای "اکثر" مدل‌‌های نویز جمعی، جهت علّی قابل شناسایی است.
+
+\begin{proof}
+	$y$ 
+	فیکس‌ای در نظر بگیرید به طوری که 
+    $\nu''(y-f(x))f'(x)\neq 0$ 
+	در همه‌ی $x$ها به جز تعدادی شمارا برقرار باشد. برای هر $f,\nu$ داده‌شده، بنا بر قضیه‌ی 
+	\ref{hoyer}
+	یک معادله‌ی دیفرانسیل برای $\xi$ به دست می‌آوریم:
+
+	\begin{equation}\label{DGLmitG}
+	\xi'''(x)=\xi''(x) G(x,y) +H(x,y)  \,,
+	\end{equation}
+که در آن $H$ و $G$ برابرند با
+	$$
+	G:= -\frac{\nu'''f'}{\nu''}+\frac{f''}{f'}
+	$$
+	و
+	$$ 
+	H:= -2\nu''f''f' +\nu'f'''+\frac{\nu'\nu'''f''f'}{\nu''}-\frac{\nu'(f'')^2}{f'} \,,
+	$$
+	با حل این معادله‌ی دیفرانسیل برای $\xi''$ داریم
+	\begin{equation}\label{rInt}
+	\xi''(x)=\xi''(x_0) e^{\int_{x_0}^x G(\tilde{x},y) d\tilde{x}}	
+	+\int_{x_0}^x  e^{\int_{\hat{x}}^x G(\tilde{x},y)d\tilde{x}} 
+	H(\hat{x},y) d\hat{x}\,.
+	\end{equation}
+مجموعه‌ی توابع $\xi$ای که در معادله‌ی دیفرانسیل مذکور صدق می‌کنند، در یک زیرفضای سه بعدی آفین زندگی می‌کنند که با سه عدد 
+ $\xi(x_0),\xi'(x_0),\xi''(x_0)$ 
+تابع به طور یکتا تعیین می‌شود. در نتیجه اثبات کردیم که برای یک تابع و مجموعه‌ی توزیع نویز‌های خارجی داده‌شده، مجموعه‌ی تویزیعع احتمال $X$هایی که به اجازه‌ی وجود یک مدل برعکس می‌دهند، در یک زیرفضای سه بعدی از فضای بی‌نهایت بعدی توزیع‌های پیوسته هستند.
+\end{proof}
+با وجود اینکه احتمال اینکه برای یک مدل نویز جمعی، مدل نویز جمعی دیگری در جهت مخالف وجود داشته باشد بسیار بسیار نادر است، این سوال مطرح است که در چه شرایطی برای یک مدل نویز جمعی چنین اتفاقی رخ می‌دهد.
+\lr{Zhang et al.}
+در 
+\cite{postnonlinear}
+پنج دسته مدل نویز جمعی معرفی می‌کند و اثبات می‌کند هر مدل نویز جمعی غیر قابل شناسایی از تابع چگالی احتمال، به ناچار در یکی از این دسته‌ها قرار می‌گیرد.
+
+\begin{thm}
+فرض کنید 
+$X_2 = f_2(X_1) + N_2$
+باشد و  $N_2$ نیز نویزی 
+\lr{full support}
+و مستقل از $X_1$ باشد، تابع $f_2$ سه بار مشتق‌پذیر بوده و همچنین معادله‌ی 
+$\frac{d}{dx_1}f_2(x_1)\frac{d^2}{dx_1^2}\log (p_{N_2}(x_2)) = 0$
+تنها در تعدادی متناهی نقطه‌ی 
+$(x_1, x_2)$
+برقرار باشد. در صورتی که یک مدل در جهت بر عکس وجود داشته باشد، به این معنا که
+$X_1 = g_1(X_2) + \tilde N_1$
+که $X_2$ و
+ $\tilde N_1$
+در آن مستقل باشد، یکی از پنج حالت زیر برقرار است.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{pnl.png}
+\end{figure}
+\end{thm}
+تعاریف دقیق عبارات به کار رفته در جدول فوق را در تعریف زیر آورده‌ایم:
+\begin{den}
+\begin{itemize}
+ فرض کنید $p$ چگالی احتمال یک توزیع پیوسته  $P$ باشد.
+\item 
+$P$
+یک 
+\lr{\emph{log-mix-lin-exp}}
+است اگر وجود داشته باشند
+$c_1, c_2, c_3, c_4$
+به نحوی که
+$c_1 <0$ 
+و
+$c_2c_3>0$
+به صورتی که:
+$$
+\log p(x) = c_1 \exp(c_2 x) + c_3 x + c_4.
+$$
+	
+\item 
+$P$
+\lr{\emph{one-sided asymptotically exponential}}
+	است اگر وجود داشته باشد
+$c \neq 0$
+    به نحوی که
+$$
+\frac{d}{dx} \log p(x) \rightarrow c
+$$
+	
+	وقتی $x \rightarrow -\infty$ یا $x \rightarrow \infty$.
+	
+	\item 
+	$P$
+	یک
+\lr{\emph{two-sided asymptotically exponential}}
+	است اگر وجود داشته باشند
+	$c_1 \neq 0$ 
+	و
+	 $c_2 \neq 0$ 
+	 
+	به نحوی که
+	$$
+	\frac{d}{dx} \log p(x) \rightarrow c_1 
+	$$
+	وقتی 
+	 $x \rightarrow -\infty$ 
+	 و
+	$$
+	\frac{d}{dx} \log p(x) \rightarrow c_2 
+	$$
+	وقتی
+	 $x \rightarrow \infty$.
+	\item 
+	$P$
+	یک 
+\lr{\emph{generalized mixture of two exponentials}}
+	 است اگر 
+ $d_1, d_2, d_3, d_4, d_5, d_6$
+ وجود داشته باشند به نحوی که
+	 $d_4 > 0$, $d_3 > 0$, $d_1 d_5 > 0$ و $d_2 < -\frac{d_1}{d_5}$ 
+	 و داشته باشیم:
+	$$
+	\log p(x) = d_1 x + d_2 \log(d_3 + d_4 \exp(d_5 x))+ d_6.
+	$$
+
+\end{itemize} 
+\end{den}
+
+\subsection{حالت چند متغیره}
+تا اینجا برای حالت دو بعدی، نشان دادیم در حالت 
+\lr{generic}
+یک توزیع احتمال، اجازه‌ی وجود مدل نویز جمعی در هر دو طرف را نمی‌دهد. در این بخش به تعمیم این قضیه از دوبعدی به حالت چندبعدی می‌پردازیم. مرجع اصلی ما در این بخش مقاله‌ی 
+\cite{continous}
+است. این مقاله‌ قضیه‌ای بسیار جالب را مطرح می‌کند که عنوان می‌کند هنگامی یک قضیه‌ی 
+\lr{Identifiability}
+دو بعدی داریم در چه صورتی می‌توان آن را به حالت چند‌بعدی تعمیم داد. برای ورود به این بحث مقاله‌ی 
+\cite{continous}
+مثالی جالب را مطرح کرده که در این گزارش نیز به همان شیوه‌ی مقاله عمل می‌کنیم.
+\begin{exa}
+\lr{SCM}
+	زیر را در نظر بگیرید:
+\begin{equation}
+\begin{cases}
+X_1 = N_1\\
+X_2 = f_2(X_1) + N_2\\
+X_3 = f_3(X_1)+aX_2 + N_3
+\end{cases}
+\end{equation}
+که در آن
+ $N_1 \stackrel{}{\sim} \mathrm{t-student}(\nu =3)$،
+ $N_2 \stackrel{}{\sim} \mathrm{Normal}(0, \sigma_2^2)$ و 
+ $N_3 \stackrel{}{\sim}\mathrm{Normal}(0, \sigma_3^2)$.
+ در این‌جا $X_2$ و $X_3$ غیر گاوسی هستند  اما
+ $$X_3|X_2=x_2 = c + aX_2|X_1=x_1 + N_3$$
+ برای هر $x_1$ یک معادله‌ی خطی-گاوسی است در حالی که هیج‌یک از معادلات اصلی 
+ \lr{SCM}
+ گاوسی-خطی نیستند. 
+
+می‌توانیم 
+\lr{SCM}
+دیگری بسازیم که در توزیع مشاهداتی تفاوتی با 
+\lr{SCM}
+اصلی نداشته باشد:
+\begin{equation}
+\begin{cases}
+X_1 = M_1\\
+X_2 = g_2(X_1) + bX_3 + M_2\\
+X_3 = g_3(X_1)+aX_2 + M_3
+\end{cases}
+\end{equation}
+به نظر می‌رسد باید شرطی بر روی توزیع‌های شرطی قرار دهیم!
+\end{exa}
+برای بیان شرط قابل شناسایی بودن از توزیع احتمال مشاهداتی، به یک تعریف نیاز داریم:
+\begin{den}
+یک مدل نویز جمعی با $n$ متغیر را در نظر بگیرید. این مدل را یک مدل نویز جمعی محدودشده می‌نامیم اگر برای هر 
+$j \in \mathbf{V}$
+و
+$i \in \mathbf{PA}_j$
+و تمام مجموعه‌های
+$\mathbf{S} \subseteq \mathbf{V}$
+به طوری که 
+$\mathbf{PA}_j  \setminus \{i\} \subseteq \mathbf{S} \subseteq \mathbf{ND}_j \setminus \{i, j\}$
+
+وجود داشته ‌باشد 
+$x_{\mathbf{S}}$
+که
+$p_{\mathbf{S}}(x_{\mathbf{S}})>0$
+به نحوی که 
+$$\Big(f_j(x_{\textbf{PA}_{j}\setminus \{i\}}, \underbrace{\cdot}_{X_i}),
+ P(X_i | X_{\textbf{S}}=x_{\textbf{S}}), P(N_j)\Big)$$
+ در شرایط قضیه‌ی 
+ \eqref{hoyer}
+ صدق کند.
+\end{den}
+
+\begin{thm}\label{jonaspeters}
+فرض کنید که 
+$\mathbf{X} = \{X_1, X_2, \dots, X_n\}$
+توسط یک مدل‌ نویز جمعی محدود‌شده با گراف $G_0$ تولید شده‌باشند و فرض کنید 
+$P(\mathbf{X})$
+نسبت به $G_0$ شرط 
+\lr{Causal Minimality}
+را ارضا کند. در این صورت $G_0$ از روی توزیع احتمال $P(\mathbf{X})$ قابل شناسایی است. 
+\end{thm}
+برای اثبات این قضیه نیاز به یک لم‌ گرافی داریم که 
+\lr{Chickering}
+در سال ۱۹۹۵ اثبات کرده است 
+\cite{chickering}.
+\begin{lem}
+فرض کنید $G$ و $G'$ دو 
+\lr{DAG}
+روی مجموعه‌ی متغیر‌های  
+$\mathbf{X}$
+باشند. فرض کنید 
+$P(\mathbf{X}$
+چگالی احتمالی همواره مثبت دارد که نسبت به $G$ و   $G'$ مارکوف هستند و شرط
+\lr{Causal Minimality}
+را ارضا می‌کنند. در این صورت متغیر‌های $L$ و $Y$  وجود دارند که برای مجموعه‌های 
+$\mathbf{Q} := \mathbf{PA}_L^{G}\setminus\{Y\}$،
+$\mathbf{R} := \mathbf{PA}_Y^{G'}\setminus\{L\}$
+و 
+$\mathbf{S} := \mathbf{Q} \cup \mathbf{R} $
+داشته باشیم:
+\begin{itemize}
+\item
+$Y \rightarrow L$
+	در $G$ و 
+$L \rightarrow Y$
+	در $G'$.
+\item 
+$\mathbf{S} \subseteq \mathbf{ND}_L^G \setminus\{Y\}$
+	و 
+$\mathbf{S}\subseteq  \mathbf{ND}_Y^{G'} \setminus\{L\} $ 
+\end{itemize}
+\end{lem}
+
+\begin{proof}
+	\textbf{
+	(قضیه‌ی 
+	\eqref{jonaspeters})}
+\\
+برهان خلف:‌فرض کنید دو مدل نویز جمعی محدود شده با این توزیع احتمال وجود داشته باشند. یکی با گراف $G$ و دیگری با  گراف  متفاوت $G'$. دو متغیر $L$ و $Y$را بر اساس لم فوق انتخاب می‌کنیم و مشابه لم فوق، می‌گیریم
+$\mathbf{Q} := \mathbf{PA}_L^{G}\setminus\{Y\}$،
+$\mathbf{R} := \mathbf{PA}_Y^{G'}\setminus\{L\}$
+و 
+$\mathbf{S} := \mathbf{Q} \cup \mathbf{R} $
+هر تحقق دلخواه 
+$\mathbf{s} = (\mathbf{q}, \mathbf{r})$
+را در نظر بگیرید و بنویسید
+$L^* := L|\mathbf{S}= \mathbf{s}$
+و 
+$Y^* := Y|\mathbf{S}= \mathbf{s}$
+از لم فوق داریم:
+$\mathbf{S} \subseteq \mathbf{ND}_L^G \setminus\{Y\}$
+ و این بدین معناست که 
+ $\{Y\} \cup \mathbf{S}  \subseteq \mathbf{ND}_L^G$
+ در نتیجه 
+ $N_L \bigCI \{Y\} \cup \mathbf{S}$
+ در نتیجه می‌توان به معادله‌ی زیر رسید:
+ $$L^* = f_L(\mathbf{q}, Y^*) + N_L \;\;\;\; N_L\bigCI Y^*$$
+ برای $G'$ هم با استدلال مشابه می‌توان به معادله‌ی زیر رسید:
+  $$Y^* = g_Y(\mathbf{r}, L^*) + N_Y \;\;\;\; N_Y\bigCI L^*$$
+   
+   و این در تناقض با فرض مدل نویز جمعی محدود شده است پس فرض خلف باطل بوده و $G$ و $G'$ برابرند.
+\end{proof}
+نکته‌ی بسیار جالبی که در این قضیه وجود دارد این است که می‌توان آن را برای هر قضیه‌ی 
+\lr{Indentifiability}
+دیگر نیز به کار برد، به شرط عدم وجود دور. به طور مثال به کمک آن می‌توان
+\lr{LINGAM}
+و یا
+\lr{Post Non-Linear Additive Noise Model}،
+که در ادامه به آن پرداخته خواهد شد، را از حالت دو بعدی به حالت چند بعدی تعمیم داد.
+
+\section{الگوریتم‌های یادگیری}
+
+در این بخش به بررسی الگوریتم‌های یادگیری گراف مربوط به یک 
+\lr{SCM}
+از داده‌ی محدود به فرض اینکه  در
+\lr{SCM}
+ مدل نویز جمعی برقرار باشد، پرداخته و الگوریتم‌های مختلف مطرح شده را با هم مقایسه می‌کنیم. مراجع ما در این بخش مقالات 
+ \cite{continous}
+  و 
+  \cite{nowzohour}
+  هستند.
+\subsection{الگوریتم 
+\lr{RESIT}
+}
+این الگوریتم توسط 
+\lr{Peters et al.}،
+سال ۲۰۱۴، در
+\cite{continous}
+  معرفی شده است. ایده‌ی اصلی این الگوریتم این است که برای هر $X_i$ اگر $X_i$ یک
+\lr{Sink Node}
+باشد داریم
+$N_i \bigCI \mathbf{X} \setminus \{X_i\}$
+به طور کلی برای هر 
+$Y \in \mathbf{X}$،
+$N_Y \bigCI \mathbf{ND}_Y$.
+
+\begin{latin}	
+\begin{algorithm}[h]
+	\caption{Regression with subsequent independence test (RESIT)}
+	\label{alg:icml}
+	\begin{algorithmic}[1]
+		\STATE {\bfseries Input:} i.i.d. samples of a $p$-dimensional distribution on $(X_1, \ldots, X_p)$ \vspace{0.0cm}
+		\STATE $S:=\{1, \ldots, p\}, \pi := [\ ]$ \vspace{0.15cm}
+		\STATE PHASE 1: Determine causal order.
+		\REPEAT
+		\FOR{$k \in S$}
+		\STATE Regress $X_k$ on $\{X_i\}_{i \in S \setminus \{k\}}$.% (and $X^i_t$ for instantaneous effects).
+		\STATE Measure dependence between residuals and $\{X_i\}_{i \in S \setminus \{k\}}$.  
+		\ENDFOR
+		\STATE Let $k^*$ be the $k$ with the weakest dependence.
+		\STATE $S:=S \setminus \{k^*\}$
+		\STATE $\mathrm{pa}(k^*):=S$
+		\STATE $\pi := [k^*, \pi]\qquad $  ($\pi$ will be the causal order, its last component being a sink)
+		\UNTIL{$\#S=1$} \vspace{0.15cm}
+		\STATE PHASE 2: Remove superfluous edges.
+		\FOR{$k \in \{2, \ldots, p\}$}
+		\FOR{$\ell \in \mathrm{pa}(\pi(k))$}
+		% \STATE Remove all superfluous parents from $\mathrm{pa}(k)$ that are not required to obtain independent residuals
+		\STATE Regress $X_{\pi(k)}$ on $\{X_i\}_{i \in \mathrm{pa}(\pi(k)) \setminus \{\ell\}}$.
+		\IF{residuals are independent of $\{X_i\}_{i \in \{\pi(1), \ldots, \pi(k-1)\}}$} % (i.e., of the variables appearing earlier in the causal order)
+		\STATE $\mathrm{pa}(\pi(k)) := \mathrm{pa}(\pi(k)) \setminus \{\ell \}$ 
+		\ENDIF
+		\ENDFOR
+		\ENDFOR
+		%   \STATE Check the remaining indep. to verify the model.
+		%   \IF{model correct}
+		\STATE {\bfseries Output:} $(\mathrm{pa}(1), \ldots, \mathrm{pa}(p))$
+		%   \ELSE
+		%   \STATE {\bfseries Output:} I do not know - bad model fit.
+		%   \ENDIF
+	\end{algorithmic}
+\end{algorithm}
+\end{latin}	
+	الگوریتم 
+	\lr{RESIT}
+	در هر مرحله یک 
+	\lr{Sink Node}
+	را تشخیص داده و حذف می‌کند. برای تشخیص یک 
+	\lr{Sink}
+	نیز از ويژگی $N_i \bigCI \mathbf{X} \setminus \{X_i\}$ استفاده می‌کند. 
+	
+	
+	الگوریتم 
+\lr{RESIT}
+	 دو فاز دارد. در فاز اول (خط ۳ تا ۱۳)، یک 	\lr{Causal Order} پیدا می‌شود. با رگرس کردن هر متغیر روی بقیه‌ی متغیر‌های گراف هر مرحله، متغیری که باقی مانده‌ی رگرسیون مربوط به از دیگر متغیرها مستقل‌تر(مثلاً با معیار 
+	 \lr{p-value}
+	آزمون 
+	\lr{HSIC}) باشد را به عنوان یک  
+\lr{sink}
+	در نظر می‌گیریم. با حذف این راس، مجدداً یک
+\lr{DAG}
+	 دیگر به وجود می‌آید که در آن همین روند را روی آن تکرار می‌کنیم. با این کار می‌توان به یک 
+\lr{Causal Order}
+برای متغیرها رسید.
+در فاز دوم، برای شروع  فرض می‌شود که اگر
+	 $\pi(i) < \pi(j)$،
+	 از $i$ به $j$ یک یال وجود دارد . از این گراف شروع کرده. هر بار یک متغیر،
+	 $X_{\pi(k)}$،
+	  را در نظر گرفته و آن را بر روی 
+\lr{parent}
+هایش به جز یک 
+\lr{parent}،
+$X_l$،
+رگرس می‌کنیم به نحوی که هر 
+\lr{parent}
+یک بار از رگرسیون کنار گذاشته شود. در هر رگرسیون، اگر باقی‌مانده رگرسیون از متغیر‌هایی که در 
+\lr{Causal Order}
+بالاتر از 
+$X_{\pi(k)}$
+هستند مستقل شد، ارتباط $X_l$ و $X_{\pi(k)}$ را حذف می‌کنیم. 
+
+الگوریتم 
+\lr{RESIT}
+در مرحله‌ی اول خود 
+$O(n^2)$
+تست آماری انجام می‌دهد و در مرحله‌ی دوم نیز تعداد تست های آماری
+$O(n)$
+است. چند جمله‌ای بودن این الگوریتم بسیار عجیب است زیرا مسائل معمول در 
+\lr{Bayesian Network Learning}
+اکثراً 
+\lr{NP-Hard}
+هستند. با این وجود الگوریتم 
+\lr{RESIT}
+برای \lr{n} های بزرگ قابل استفاده نیست زیرا در صورتی که در انجام تست آماری دچار خطا شویم، خطا به شدت در مراحل بعد منتشر شده و باعث می‌شود به طور قابل ملاحظه‌ای از گراف اصلی دور شویم. 
+\subsection{الگوریتم‌های مبتنی بر 
+\lr{Independence Score}
+}
+یک دسته‌ی دیگر از الگوریتم‌های یادگیری در مدل‌های نویز جمعی، الگوریتم‌های مبتنی بر 
+\lr{score}
+هستند.
+ یک الگوریتم دیگر برای یادگیری ساختار مدل‌های نویز جمعی محدود شده، این است که تمام  
+\lr{DAG}
+ها را 
+\lr{enumerate}
+کنیم و تست های استقلال مطرح شده را با آنها چک کنیم ولی مساله این است که این روش لزوما یک گراف
+\lr{Causal Minimal}
+به ما نمی‌دهد. برای حل این مشکل یک 
+\lr{penalized independence score}
+تعریف کرده و آن را برای گراف‌ها محاسبه می‌کنیم و این معیار را مبنای انتخاب گراف قرار می‌دهیم.
+$$\hat{G} = \mathrm{argmin}_G \sum_{i=1}^n \mathrm{DM}(res_i^{G, \mathrm{RM}}, res_{-i}^{G, \mathrm{RM}}) + \lambda \#\mathrm{edges}$$
+در آن 
+\lr{RM}
+روش رگرسیون ما و 
+\lr{DM}
+یک معیار استقلال است.
+$res_i$
+مقدار باقی مانده‌ی رگرسیون $X_i$ است وقتی آن را بر روی تمام 
+\lr{parent}
+هایش رگرس می‌کنیم و 
+$res_-i$
+باقی‌مانده‌ی رگرسیون است 
+
+\bibliographystyle{acm-fa}
+\bibliography{bib}
+
+
+\end{document}

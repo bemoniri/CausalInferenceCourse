@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}قضایای قابل‌شناسایی بودن}{1}
+\contentsline {subsection}{\numberline {1‏.‏1}حالت دو متغیره}{1}
+\contentsline {subsection}{\numberline {1‏.‏2}حالت چند متغیره}{4}
+\contentsline {section}{\numberline {2}الگوریتم‌های یادگیری}{6}
+\contentsline {subsection}{\numberline {2‏.‏1}الگوریتم \lr {RESIT} }{6}
+\contentsline {subsection}{\numberline {2‏.‏2}الگوریتم‌های مبتنی بر \lr {Independence Score} }{7}
