@@ -1,48 +1,50 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
-I found no \citation commands---while reading file main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 482 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+The style file: acm-fa.bst
+Database file #1: bib.bib
+-- acm-fa.bst version 0.9 (2015/05/09) 
+-- This is a BibTeX style for XePersian: http://www.parsilatex.com
+
+Done.
+You've used 2 entries,
+            2725 wiz_defined-function locations,
+            664 strings with 5404 characters,
+and the built_in function-call counts, 755 in all, are:
+= -- 59
+> -- 34
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 14
+- -- 12
+* -- 69
+:= -- 116
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 2
+duplicate$ -- 18
+empty$ -- 49
+format.name$ -- 12
+if$ -- 175
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 2
+missing$ -- 24
+newline$ -- 24
+num.names$ -- 4
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 10
 quote$ -- 0
-skip$ -- 0
+skip$ -- 10
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 37
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
+top$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+while$ -- 5
+width$ -- 3
+write$ -- 30

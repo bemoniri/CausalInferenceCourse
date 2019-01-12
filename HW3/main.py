@@ -18,10 +18,6 @@ def getChainComp (G):
         O.append(g)
     return O    
 
-nodes = [0, 1, 2, 3, 4]
-Graph = nx.DiGraph()
-Graph.add_nodes_from(nodes)
-Graph.add_edges_from([[0,1], [1,2], [2,1], [2,3], [3, 2], [1, 3], [3, 4]])
 
 #%%
 def ChainCom(U, v):
@@ -70,13 +66,19 @@ Adj = nx.adjacency_matrix(GG)
 Adj = Adj.todense()
 
 
+plt.figure()
+plt.subplot(2, 3, 1)
+nx.draw_shell(GG,  with_labels=True)
+plt.title('UCCG')
+c = 2
 for j in nodes:
     H = nx.to_directed(nx.from_numpy_array(Adj))
     [G, O] = ChainCom(H, j)
-    plt.figure()
+    plt.subplot(2, 3, c)
     nx.draw_shell(G, with_labels=True)
-    plt.title(j)
-    plt.show()
+    plt.title("%i-rooted" %(c-1))
+    c = c + 1
+plt.show()
 
 #%%
 def sizeMEC (U):
@@ -111,13 +113,6 @@ GG.add_nodes_from(nodes)
 GG.add_edges_from([[1, 2], [2, 1], [1, 4], [4,1], [0, 1], [1, 0], [0, 2], [2,0], [2, 4], [4, 2], [1, 3], [3, 1], [3, 4], [4,3]])
 print(sizeMEC(GG))
 
-#%%
-def CountMEC (cpdag):
-    graphs = getChainComp(cpdag)
-    counter = 1
-    for uccg in graphs:
-        counter = counter * sizeMEC(uccg)        
-    return counter
 
 #%% Uniform MEC Sampling
 def randomDAG(n, p):
@@ -141,6 +136,10 @@ def _has_one_edge(dag, i, j):
             (not dag.has_edge(i, j)) and dag.has_edge(j, i))
 def _has_no_edge(dag, i, j):
     return (not dag.has_edge(i, j)) and (not dag.has_edge(j, i))
+
+
+
+
 def dag2cpdag(dag):    
     vstructure_set = []
     for node in dag.nodes():        
@@ -213,6 +212,24 @@ def dag2cpdag(dag):
         old_dag = dag.copy()        
     return dag
 
+
+#%%
+def CountMEC (cpdag):
+    graphs = getChainComp(cpdag)
+    counter = 1
+    for uccg in graphs:
+        counter = counter * sizeMEC(uccg)        
+    return counter
+
+
+def AdjCountMEC(adj):
+    cpdag = nx.from_numpy_matrix(adj)
+    graphs = getChainComp(cpdag)
+    counter = 1
+    for uccg in graphs:
+        counter = counter * sizeMEC(uccg)        
+    return counter
+
 #%% Testing Meek Rules and DAG2CPDAG Function
 nodes = [0, 1, 2, 3, 4]
 GG = nx.DiGraph()
@@ -223,16 +240,15 @@ cpdag = dag2cpdag(GG)
 
 
 plt.figure()
+plt.subplot(121)
 nx.draw_shell(GG, with_labels=True)
-plt.show()
-
-plt.figure()
+plt.title("DAG")
+plt.subplot(122)
 nx.draw_shell(cpdag, with_labels=True)
+plt.title("CPDAG")
 plt.show()
-
 
 #%% Check "Counting Markov Equivalenece Class" Function
-
 print(CountMEC(cpdag))
 
 #%% Random Dag
@@ -244,13 +260,6 @@ for i in range(10000):
     h.append([CountMEC(cpdag), rdag.number_of_edges()])
 numDags = 4175098976430598143
 
-#%%
 plt.figure()
 plt.scatter([x[0] for x in h], [x[1] for x in h])
 plt.show()
-
-
-import seaborn as sns; sns.set(style="white", color_codes=True)
-import statistics
-g = sns.jointplot([x[0] for x in h], [x[1] for x in h])
-np.stat.mode([x[0] for x in h])

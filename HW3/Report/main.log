@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  8 DEC 2018 00:24
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  12 JAN 2019 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1573,66 +1573,30 @@ LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 9.
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 13.
+(Font)              scaled to size 14.4pt on input line 11.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
 (Font)              scaled to size 14.4pt on input line 13.
+File: chains.png Graphic file (type QTm)
+
+<use  "chains.png" >
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
-(Font)              scaled to size 12.0pt on input line 25.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 7.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 5.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 5.0pt on input line 32.
-LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 33.
-LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 33.
-LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
-(Font)              scaled to size 10.0pt on input line 59.
-File: pcex1.png Graphic file (type QTm)
-
-<use  "pcex1.png" >
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1
+(Font)              scaled to size 10.0pt on input line 71.
+ [1
 
 ]
-File: pcex2.png Graphic file (type QTm)
- <use  "pcex2.png" > [2]
-File: pcaout.png Graphic file (type QTm)
- <use  "pcaout.png" >
-File: stable.png Graphic file (type QTm)
- <use  "stable.png" > [3]
-File: plt1.png Graphic file (type QTm)
-
-<use  "plt1.png" >
-File: plt2.png Graphic file (type QTm)
- <use  "plt2.png" > [4] (./main.aux) )
+File: meek.png Graphic file (type QTm)
+ <use  "meek.png" > [2] (./main.bbl) [3] (./main.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31909 strings out of 493591
- 630585 string characters out of 6143545
- 676664 words of memory out of 5000000
- 34738 multiletter control sequences out of 15000+600000
- 11624 words of font info for 98 fonts, out of 8000000 for 9000
+ 31866 strings out of 493591
+ 629538 string characters out of 6143545
+ 672666 words of memory out of 5000000
+ 34711 multiletter control sequences out of 15000+600000
+ 9225 words of font info for 76 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 57i,14n,63p,10415b,13302s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,8n,63p,10415b,13244s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (4 pages).
+Output written on main.pdf (3 pages).
