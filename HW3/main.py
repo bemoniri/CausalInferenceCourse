@@ -1,36 +1,40 @@
 import numpy as np
-import scipy
 import networkx as nx
 import matplotlib.pyplot as plt
+from itertools import combinations, permutations
 
 #%%
-def sizeMEC ():
-    U = nx.Graph()
-    n = U.number_of_edges()
-    p = U.number_of_nodes()
-    if (n==p-1):
-        return p
-    if (n==p):
-        return 2*p
-    if (n==p*(p-1)/2 -2):
-        return (p**2 - p - 4)*np.math.factorial(p-3)
-    if (n==p*(p-1)/2 -1):
-        return 2*np.math.factorial(p-1) - np.math.factorial(p-2)
-    if (n==p*(p-1)/2):    
-        return np.math.factorial(p)
+def getChainComp (G):
+    Adj = nx.adjacency_matrix(G)
+    Adj = Adj.todense()
+    sizeofmat = np.shape(Adj)
+    for i in range(sizeofmat[0]):
+        for j in range(sizeofmat[1]):
+            if Adj[i,j] == 1 and Adj[j,i] ==0:
+                Adj[i,j] = 0
+    Gp = nx.from_numpy_matrix(Adj)
+    O = []
+    for g in nx.connected_component_subgraphs(Gp):
+        O.append(g)
+    return O    
+
+nodes = [0, 1, 2, 3, 4]
+Graph = nx.DiGraph()
+Graph.add_nodes_from(nodes)
+Graph.add_edges_from([[0,1], [1,2], [2,1], [2,3], [3, 2], [1, 3], [3, 4]])
 
 #%%
 def ChainCom(U, v):
     A = [v]
-    B = [x for x in U.nodes() if x != v]
+    B = [x for x in U.nodes() if x!=v]
     G = U
-    while (len(B) != 0):
+    while (len(B) != 0):        
         AdjA = []
         for y in A:
             w = G.neighbors(y)
             w = [x for x in w]
             AdjA = AdjA + w
-        T = [w for w in B if w in AdjA]        
+        T = [w for w in B if w in AdjA]   
         for t in T:
             for c in A:
                 if [t, c] in G.edges():
@@ -45,339 +49,208 @@ def ChainCom(U, v):
                         for x in G.node():
                             if (x, z) in G.edges() and (z, x) not in G.edges():        
                                 if (x, y) not in G.edges() and (y, x) not in G.edges():                                
-                                  G.remove_edge(y, z)                              
-                                  flag = 1                                      
+                                  if (y,z) in G.edges():
+                                      G.remove_edge(y, z)                              
+                                      flag = 1                                      
             if(flag == 0):
                 A = T
                 B = [x for x in B if x not in T]
                 flag  = 0            
                 break
-        GT = G.subgraph(T)
-        plt.figure()
-        nx.draw_networkx(GT)
-        plt.show()
-        
-    plt.figure()    
-    nx.draw_networkx(G)
-    plt.show()
-    
-nodes = [1, 2, 3, 4, 5]
-Graph = nx.DiGraph()
-Graph.add_nodes_from(nodes)
-Graph.add_edges_from([[2, 3], [3, 2], [2, 5], [5,2], [1, 2],[2, 1], [1, 3], [3,1], [3, 5], [5, 3], [2, 4], [4, 2], [4, 5], [5,4]])
-ChainCom(Graph, 1)        
+    O = getChainComp(G)    
+    return [G, O]
 
-#%%
-def connected (G):
-    Adj = nx.adjacency_matrix(G)
-    Adj = Adj.todense()
-    sizeofmat = np.shape(Adj)
-    for i in range(sizeofmat[0]):
-        for j in range(sizeofmat[1]):
-            if Adj[i,j] == 1 and Adj[j,i] ==0:
-                Adj[i,j] = 0
-    print(Adj)
-    Gp = nx.from_numpy_matrix(Adj)
+#%% Testing Everything until now
+
+nodes = [0, 1, 2, 3, 4]
+GG = nx.DiGraph()
+GG.add_nodes_from(nodes)
+GG.add_edges_from([[1, 2], [2, 1], [1, 4], [4,1], [0, 1],[1, 0], [0, 2], [2,0], [2, 4], [4, 2], [1, 3], [3, 1], [3, 4], [4,3]])
+Adj = nx.adjacency_matrix(GG)
+Adj = Adj.todense()
+
+
+for j in nodes:
+    H = nx.to_directed(nx.from_numpy_array(Adj))
+    [G, O] = ChainCom(H, j)
     plt.figure()
-    plt.subplot(211)
-    nx.draw_networkx(Gp)
-    plt.subplot(212)
-    nx.draw_networkx(Gp)
+    nx.draw_shell(G, with_labels=True)
+    plt.title(j)
     plt.show()
-    return
-
-nodes = [1, 2, 3, 4, 5]
-Graph = nx.DiGraph()
-Graph.add_nodes_from(nodes)
-Graph.add_edges_from([[2, 3], [2, 5], [1, 2],[2, 1], [5, 3], [2, 4], [4, 2], [4, 5], [5,4]])
-
-plt.figure()
-nx.draw_networkx(Graph)
-plt.show()
-
-connected(Graph)
-
-#%% Partial Correlation Calculations and The Cond. Independence Test
-def test (data, x, y, set):
-    if (len(set) == 0):
-        data_x = data[:, x]
-        data_y = data[:, y]
-        
-        r = np.corrcoef(data_x, data_y)
-        r = r[1,0]
-        t = 0.5*np.log((1+r)/(1-r))   
-        n = len(data_x)        
-        z = t*np.sqrt(n-3)
-        pval = scipy.stats.norm.sf(abs(z))*2 #twosided
-        return pval
-
-    else:
-        data_x = data[:, x]
-        data_y = data[:, y]
-        j = 0
-        data_z = np.zeros([len(data_x), len(set)])
-        for i in set:
-            data_z[:, j] = data[:, i]
-            j += 1
-        reg = LinearRegression().fit(data_z, data_x)
-        pred_x = reg.predict(data_z)
-        residual_x = pred_x - data_x
-                
-        reg = LinearRegression().fit(data_z, data_y)
-        pred_y = reg.predict(data_z)
-        residual_y = data_y - pred_y
-                
-        r = np.corrcoef(residual_x, residual_y)
-        r = r[1,0]
-        t = 0.5*np.log((1+r)/(1-r))   
-        n = len(data_x)        
-        z = t*np.sqrt(n-3)
-        pval = scipy.stats.norm.sf(abs(z))*2 #twosided
-        return pval
-        
-#%% PC Algorithm Implementation
-def pc (da, alpha):
-    # Nodes of the graph
-    b = np.shape(da)
-    nodes = range(b[1])
-    # Creating the full undirected graph to start with:
-    Graph = nx.Graph()
-    Graph.add_nodes_from(nodes)
-    for (i, j) in combinations(nodes, 2):
-        Graph.add_edge(i, j)
-        pass
-    l = -1
-    while True:
-        l = l + 1
-        for (i, j) in permutations(nodes, 2):
-            adjacents = list(Graph.neighbors(i))
-            if j in adjacents: # if they are adjacent
-                adjacents.remove(j) 
-                if len(adjacents)>=l: #if there exists a set of adjacent nodes with size >= l
-                    for S in combinations(adjacents, l):
-                        pval = test(da, i, j, S)                    # Cond. Ind. Test
-                        print("(%d, %d), S = %s,  pval = %f" %(i, j, str(S), pval))                    
-                        if pval > alpha:
-                            Graph.remove_edge(i, j)   # Remove Edge (PC Algorithm)
-                            print("Remove (%d %d)" %(i,j))
-                            break
-        print("End of Level %d" %l)
-        if(Graph.number_of_nodes()<l):
-            break
-    return Graph
-
-#%% ٍExample One - Testing The Algorithm
-
-x = np.random.randn(1, 10000000)
-y = x + np.random.randn(1, 10000000)
-z = 1*y + np.random.randn(1, 10000000)
-w = 2*z + 3*x +  np.random.randn(1, 10000000)
-
-da = np.transpose((np.concatenate((x, y, z, w), axis =0)))
-G = pc(da, 0.02)        
-
-plt.figure()
-nx.draw_networkx(G)
-plt.show()
-
-
-#%% ٍExample Two - Testing The Algorithm
-
-x0 = np.random.randn(1, 10000000)
-x1 =  x0 + np.random.randn(1, 10000000)
-x2 =  2*x0 + x1 +  0.01*np.random.randn(1, 10000000)
-x3 =  3*x1 + 0.01*np.random.randn(1, 10000000)
-x4 =  4*x2 + 10*x3 + 2*np.random.randn(1, 10000000)
-
-da = np.transpose((np.concatenate((x0, x1, x2, x3, x4), axis =0)))
-
-G = pc(da, 0.02)      
-plt.figure()
-nx.draw_networkx(G)
-plt.show()
-
-#%% pc-data.csv
-
-# Loading Data
-dag_data = np.genfromtxt('pc-data.csv', delimiter='\t')
-# PC-pop Algorithm:
-G = pc(dag_data, 0.02)
-print(G.number_of_edges())
-
-
-#%% PC-stable Algorithm implementation
-def pc_stable (da, alpha):
-    remove_edges = []
-    # Nodes of the graph
-    b = np.shape(da)
-    nodes = range(b[1])
-    # Creating the full undirected graph to start with:
-    Graph = nx.Graph()
-    Graph.add_nodes_from(nodes)
-    for (i, j) in combinations(nodes, 2):
-        Graph.add_edge(i, j)
-        pass
-    l = 0
-    while True:
-        for (i, j) in permutations(nodes, 2):
-            adjacents = list(Graph.neighbors(i))
-            if j in adjacents: # if they are adjacent
-                adjacents.remove(j) 
-                if len(adjacents)>=l: #if there exists a set of adjacent nodes with size >= l
-                    for S in combinations(adjacents, l):
-                        pval = test(da, i, j, S)                    # Cond. Ind. Test
-                        print("(%d, %d), S = %s,  pval = %f" %(i, j, str(S), pval))                    
-                        if pval > alpha:
-                            remove_edges.append((i, j))
-                            
-                            print("(%d %d) will be removed" %(i,j))
-                            break
-        l = l + 1
-        Graph.remove_edges_from(remove_edges) 
-        print("End of Level %d, Edges Removed!" %l)
-        if(Graph.number_of_nodes()<l):
-            break
-    return Graph
-
-
-#%% ٍExample - Testing The Algorithm (PC-Stable)
-
-x = np.random.randn(1, 10000000)
-y = x + np.random.randn(1, 10000000)
-z = 1*y + x + np.random.randn(1, 10000000)
-w = 2*z + 3*x +  np.random.randn(1, 10000000)
-
-da = np.transpose((np.concatenate((x, y, z, w), axis =0)))
-G = pc_stable(da, 0.02)        
-
-plt.figure()
-nx.draw_networkx(G)
-plt.show()
-
-
-#%% pc-data.csv
-
-# Loading Data
-dag_data = np.genfromtxt('pc-data.csv', delimiter='\t')
-# PC-pop Algorithm:
-G = pc_stable(dag_data, 0.02)
-print(G.number_of_edges())
-
-plt.figure()
-nx.draw_kamada_kawai(G)
-plt.show()
 
 #%%
-def randomDAG(n, p, lB, uB):
+def sizeMEC (U):
+    n = U.number_of_edges()
+    p = U.number_of_nodes()
+    if (n==p-1):
+        return p
+    if (n==p):
+        return 2*p
+    if (n==p*(p-1)/2 -2):
+        return (p**2 - p - 4)*np.math.factorial(p-3)
+    if (n==p*(p-1)/2 -1):
+        return 2*np.math.factorial(p-1) - np.math.factorial(p-2)
+    if (n==p*(p-1)/2):    
+        return np.math.factorial(p)    
+    Adj = nx.adjacency_matrix(U)
+    Adj = Adj.todense()    
+    s = [i for i in range(p)]
+    for j in range(p):
+        H = nx.to_directed(nx.from_numpy_array(Adj))
+        [G, O] = ChainCom(H, j)        
+        s[j] = 1
+        for graph in O:            
+            s[j] = s[j] * sizeMEC(graph)
+    return sum(s)
+
+
+#%% Test Counting    
+nodes = [0, 1, 2, 3, 4]
+GG = nx.DiGraph()
+GG.add_nodes_from(nodes)
+GG.add_edges_from([[1, 2], [2, 1], [1, 4], [4,1], [0, 1], [1, 0], [0, 2], [2,0], [2, 4], [4, 2], [1, 3], [3, 1], [3, 4], [4,3]])
+print(sizeMEC(GG))
+
+#%%
+def CountMEC (cpdag):
+    graphs = getChainComp(cpdag)
+    counter = 1
+    for uccg in graphs:
+        counter = counter * sizeMEC(uccg)        
+    return counter
+
+#%% Uniform MEC Sampling
+def randomDAG(n, p):
     nodes = range(n)
-    G = nx.Graph()
-    Graph = nx.Graph()
+    Graph = nx.DiGraph()
     Graph.add_nodes_from(nodes)
     for possible_edges in combinations(nodes, 2):
         if (np.random.rand() < p):
-            Graph.add_edge(possible_edges[0], possible_edges[1], weight=np.random.uniform(lB, uB))    
-    plt.figure()
-    nx.draw_circular(Graph)
-    plt.show()
+            Graph.add_edge(possible_edges[0], possible_edges[1])    
     return Graph
 
-def genData(Graph, n):
-    x = np.zeros((n, Graph.number_of_nodes()))
-    print(Graph.nodes())
-    for node in Graph.nodes():
-        x[:,node] = np.random.randn(n)
-        adjacents = Graph.neighbors(node)
-        for i in adjacents:
-            if i < node: # if parent
-                w = Graph.get_edge_data(i, node)
-                w = w['weight']
-                x[:,node] = x[:,node] + w*x[:,i]
-    return x
+
+def _has_both_edges(dag, i, j):
+    return dag.has_edge(i, j) and dag.has_edge(j, i)
+
+def _has_any_edge(dag, i, j):
+    return dag.has_edge(i, j) or dag.has_edge(j, i)
+
+def _has_one_edge(dag, i, j):
+    return ((dag.has_edge(i, j) and (not dag.has_edge(j, i))) or
+            (not dag.has_edge(i, j)) and dag.has_edge(j, i))
+def _has_no_edge(dag, i, j):
+    return (not dag.has_edge(i, j)) and (not dag.has_edge(j, i))
+def dag2cpdag(dag):    
+    vstructure_set = []
+    for node in dag.nodes():        
+        for edge1 in dag.edges():
+            if(edge1[1] == node):
+                for edge2 in dag.edges():
+                    if(edge2[1] == node and edge2 != edge1):
+                        if([edge2[0], edge1[0]] not in dag.edges() and [edge1[0], edge2[0]] not in dag.edges()):
+                            if ([node, edge1[0], edge2[0]] not in vstructure_set):
+                                vstructure_set.append([node, edge2[0], edge1[0]])                                    
+    cpdag = nx.DiGraph()
+    cpdag.add_nodes_from(dag.node())    
+    for edge in dag.edges():
+        cpdag.add_edge(edge[0], edge[1])
+        cpdag.add_edge(edge[1], edge[0])    
+        
+    for vstructure in vstructure_set:
+        if ((vstructure[0], vstructure[2]) in cpdag.edges()):
+            cpdag.remove_edge(vstructure[0], vstructure[2])        
+        if ((vstructure[0], vstructure[1]) in cpdag.edges()):
+            cpdag.remove_edge(vstructure[0], vstructure[1])            
+    # MEEK RULES!!! ::
+    node_ids = dag.nodes()
+    dag = cpdag
+    old_dag = dag.copy()
+    while True:
+        for (i, j) in permutations(node_ids, 2):            
+            # RULE 1
+            if _has_both_edges(dag, i, j): 
+                for k in dag.predecessors(i):
+                    if dag.has_edge(i, k):
+                        continue
+                    if _has_any_edge(dag, k, j):
+                        continue
+                    dag.remove_edge(j, i)
+                    break    
+            # RULE 2
+            if _has_both_edges(dag, i, j):
+                succs_i = set()
+                for k in dag.successors(i):
+                    if not dag.has_edge(k, i):
+                        succs_i.add(k)
+                preds_j = set()
+                for k in dag.predecessors(j):
+                    if not dag.has_edge(j, k):
+                        preds_j.add(k)
+                if len(succs_i & preds_j) > 0:
+                    dag.remove_edge(j, i)
+            # RULE 3
+            if _has_both_edges(dag, i, j):
+                adj_i = set()
+                for k in dag.successors(i):
+                    if dag.has_edge(k, i):
+                        adj_i.add(k)
+                for (k, l) in combinations(adj_i, 2):
+                    if _has_any_edge(dag, k, l):
+                        continue
+                    if dag.has_edge(j, k) or (not dag.has_edge(k, j)):
+                        continue
+                    if dag.has_edge(j, l) or (not dag.has_edge(l, j)):
+                        continue
+                    dag.remove_edge(j, i)
+                    break
+            # Rule 4: Orient i-j into i->j whenever there are two chains
+            # i-k->l and k->l->j such that k and j are nonadjacent.            
+            # However, this rule is not necessary when the PC-algorithm
+            # is used to estimate a DAG.
+        if nx.is_isomorphic(dag, old_dag):
+            break
+        old_dag = dag.copy()        
+    return dag
+
+#%% Testing Meek Rules and DAG2CPDAG Function
+nodes = [0, 1, 2, 3, 4]
+GG = nx.DiGraph()
+GG.add_nodes_from(nodes)
+GG.add_edges_from([[1,0], [1, 2], [2, 0], [3,2], [3, 4]])
+
+cpdag = dag2cpdag(GG)
 
 
+plt.figure()
+nx.draw_shell(GG, with_labels=True)
+plt.show()
 
-#%%  PC Alg
-Recall_final = []
-Missing_final = []
-alpha_list = []
-for i in [-4, -3, -2, -1, 0, 1, 2]:
-    alpha_list.append(0.01*2**i)
+plt.figure()
+nx.draw_shell(cpdag, with_labels=True)
+plt.show()
 
-for alpha in alpha_list:
-    Missing_array = []
-    Recall_array = []
-    for i in range(100):    
-        Graph = randomDAG(20, 0.2, 0.1, 1)
-        data = genData(Graph, 1000)
-        estimated = pc(data, alpha)
-        
-        real_adj = nx.to_numpy_matrix(Graph, weight='None')
-        estimated_adj = nx.to_numpy_matrix(estimated)
-        
-        real_num_edges = Graph.number_of_edges()
-        
-        # Recall : Number of real edges estimated correctly/ Total number of real edges
-        delta = 2*real_adj - estimated_adj
-        
-        edge_in_real_and_in_estimated = np.count_nonzero(delta==1)/2
-        recall = edge_in_real_and_in_estimated/real_num_edges
-        Recall_array.append(recall)
-        
-        # Missing : Edges in the estimsted graph which do not exist in the real graph / number of edges in the real graph
-        edge_not_in_real_and_in_estimated = np.count_nonzero(delta==-1)/2
-        missing = edge_not_in_real_and_in_estimated/real_num_edges
-        Missing_array.append(missing)
-        
-    Recall_final.append(np.mean(Recall_array))
-    Missing_final.append(np.mean(Missing_array))
 
-pc_recall = Recall_final
-pc_missing = Missing_final
-#%%  PC-Stable Alg
-Recall_final = []
-Missing_final = []
-alpha_list = []
-for i in [-4, -3, -2, -1, 0, 1, 2]:
-    alpha_list.append(0.01*2**i)
+#%% Check "Counting Markov Equivalenece Class" Function
 
-for alpha in alpha_list:
-    Missing_array = []
-    Recall_array = []
-    for i in range(100):    
-        Graph = randomDAG(20, 0.2, 0.1, 1)
-        data = genData(Graph, 1000)
-        estimated = pc_stable(data, alpha)
-        
-        real_adj = nx.to_numpy_matrix(Graph, weight='None')
-        estimated_adj = nx.to_numpy_matrix(estimated)
-        
-        real_num_edges = Graph.number_of_edges()
-        
-        # Recall : Number of real edges estimated correctly/ Total number of real edges
-        delta = 2*real_adj - estimated_adj
-        
-        edge_in_real_and_in_estimated = np.count_nonzero(delta==1)/2
-        recall = edge_in_real_and_in_estimated/real_num_edges
-        Recall_array.append(recall)
-        
-        # Missing : Edges in the estimsted graph which do not exist in the real graph / number of edges in the real graph
-        edge_not_in_real_and_in_estimated = np.count_nonzero(delta==-1)/2
-        missing = edge_not_in_real_and_in_estimated/real_num_edges
-        Missing_array.append(missing)
-    Recall_final.append(np.mean(Recall_array))
-    Missing_final.append(np.mean(Missing_array))
+print(CountMEC(cpdag))
 
-stable_recall = Recall_final
-stable_missing = Missing_final
+#%% Random Dag
+h = []
+for i in range(10000): 
+    print(i)
+    rdag = randomDAG(11, 0.5)
+    cpdag = dag2cpdag(rdag)    
+    h.append([CountMEC(cpdag), rdag.number_of_edges()])
+numDags = 4175098976430598143
 
 #%%
-pow = [-4,-3,-2,-1,0,1,2]
 plt.figure()
-plt.plot(pow, pc_recall)
-plt.plot(pow, stable_recall)
+plt.scatter([x[0] for x in h], [x[1] for x in h])
 plt.show()
 
-plt.figure()
-plt.plot(pow, pc_missing)
-plt.plot(pow, stable_missing)
-plt.show()
+
+import seaborn as sns; sns.set(style="white", color_codes=True)
+import statistics
+g = sns.jointplot([x[0] for x in h], [x[1] for x in h])
+np.stat.mode([x[0] for x in h])
