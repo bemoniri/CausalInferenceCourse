@@ -5,16 +5,6 @@
 
 \begin{LTRbibitems}
 \resetlatinfont
-\bibitem{mcmc}
-\textsc{ He, Y., Jia, J., and Yu, B.}
-\newblock Reversible mcmc on markov equivalence classes of sparse directed
-  acyclic graphs.
-\newblock {\em CoRR abs/1209.5860\/} (2012).
-
-\end{LTRbibitems}
-
-\begin{LTRbibitems}
-\resetlatinfont
 \bibitem{count}
 \textsc{ He, Y., Jia, J., and Yu, B.}
 \newblock Counting and exploring sizes of markov equivalence classes of

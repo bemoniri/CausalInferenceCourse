@@ -76,7 +76,7 @@ for j in nodes:
     [G, O] = ChainCom(H, j)
     plt.subplot(2, 3, c)
     nx.draw_shell(G, with_labels=True)
-    plt.title("%i-rooted" %(c-1))
+    plt.title("%i-rooted" %(c-2))
     c = c + 1
 plt.show()
 

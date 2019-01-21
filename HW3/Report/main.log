@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  12 JAN 2019 22:33
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  15 JAN 2019 21:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1576,25 +1576,26 @@ LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 11.
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
 (Font)              scaled to size 14.4pt on input line 13.
-File: chains.png Graphic file (type QTm)
+File: papergraph.png Graphic file (type QTm)
 
-<use  "chains.png" >
+<use  "papergraph.png" >
 LaTeX Font Info:    Font shape `EU1/XBNiloofar(0)/bx/n' will be
 (Font)              scaled to size 10.0pt on input line 71.
  [1
 
 ]
 File: meek.png Graphic file (type QTm)
- <use  "meek.png" > [2] (./main.bbl) [3] (./main.aux) )
+ <use  "meek.png" > [2] (./main.bbl) [3]
+(./main.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 31866 strings out of 493591
- 629538 string characters out of 6143545
+ 31865 strings out of 493591
+ 629540 string characters out of 6143545
  672666 words of memory out of 5000000
- 34711 multiletter control sequences out of 15000+600000
+ 34710 multiletter control sequences out of 15000+600000
  9225 words of font info for 76 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  57i,8n,63p,10415b,13244s stack positions out of 5000i,500n,10000p,200000b,80000s
