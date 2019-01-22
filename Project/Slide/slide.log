@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  22 JAN 2019 00:47
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  22 JAN 2019 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -766,69 +766,126 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@lastruleclass=\count158
 \@thisrulewidth=\dimen256
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithm.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
-nment
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count159
-\float@exts=\toks43
-\float@box=\box54
-\@float@everytoks=\toks44
-\@floatcapt=\box55
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box54
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-\@float@every@algorithm=\toks45
-\c@algorithm=\count160
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen257
+\pgf@nodesepend=\dimen258
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
-Package: algpseudocode 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
-Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen259
+\pgffor@skip=\dimen260
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count161
-\c@ALG@rem=\count162
-\c@ALG@nested=\count163
-\ALG@tlm=\skip57
-\ALG@thistlm=\skip58
-\c@ALG@Lnr=\count164
-\c@ALG@blocknr=\count165
-\c@ALG@storecount=\count166
-\c@ALG@tmpcounter=\count167
-\ALG@tmplength=\skip59
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count159
+\pgfplotmarksize=\dimen261
 )
-Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
+\tikz@lastx=\dimen262
+\tikz@lasty=\dimen263
+\tikz@lastxsaved=\dimen264
+\tikz@lastysaved=\dimen265
+\tikzleveldistance=\dimen266
+\tikzsiblingdistance=\dimen267
+\tikz@figbox=\box55
+\tikz@figbox@bg=\box56
+\tikz@tempbox=\box57
+\tikz@tempbox@bg=\box58
+\tikztreelevel=\count160
+\tikznumberofchildren=\count161
+\tikznumberofcurrentchild=\count162
+\tikz@fig@count=\count163
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count164
+\pgfmatrixcurrentcolumn=\count165
+\pgf@matrix@numberofcolumns=\count166
+)
+\tikz@expandcount=\count167
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip57
+\subfigcapskip=\skip58
+\subfigcaptopadj=\dimen268
+\subfigbottomskip=\skip59
+\subfigcapmargin=\dimen269
+\subfiglabelskip=\skip60
+\c@subfigure=\count168
+\c@lofdepth=\count169
+\c@subtable=\count170
+\c@lotdepth=\count171
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip61
+\subfig@bottom=\skip62
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip60
-\bibsep=\skip61
+\bibhang=\skip63
+\bibsep=\skip64
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count168
+\c@NAT@ctr=\count172
 ) (./slide.aux)
 \openout1 = `slide.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -865,8 +922,8 @@ LaTeX Font Info:    ... okay on input line 117.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring OFF on input line 117.
+\AtBeginShipoutBox=\box59
+Package hyperref Info: Link coloring OFF on input line 121.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -874,68 +931,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count169
+\c@section@level=\count173
 )
-LaTeX Info: Redefining \ref on input line 117.
-LaTeX Info: Redefining \pageref on input line 117.
-LaTeX Info: Redefining \nameref on input line 117.
+LaTeX Info: Redefining \ref on input line 121.
+LaTeX Info: Redefining \pageref on input line 121.
+LaTeX Info: Redefining \nameref on input line 121.
 
 (./slide.out) (./slide.out)
 \@outlinefile=\write5
 \openout5 = `slide.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 117.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 117.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 121.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 117.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 117.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 117.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 117.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 117.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 117.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 117.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 117.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 117.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 121.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 117.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 117.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 117.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 117.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 117.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 117.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 117.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 117.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 121.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 117.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 117.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 121.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 121.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-17.
+21.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-117.
+121.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 117.
+ut line 121.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -961,26 +1018,29 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 117.
+LaTeX Info: Redefining \includegraphics on input line 121.
  (./slide.nav)
+File: logo.png Graphic file (type QTm)
+
+<use  "logo.png" >
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 120.
+(Font)              size <5> substituted on input line 126.
 
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 136.
+LaTeX Font Info:    Try loading font information for U+msa on input line 142.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 136.
+LaTeX Font Info:    Try loading font information for U+msb on input line 142.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 136.
+line 142.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -989,12 +1049,12 @@ thkerncmss.
 
 ] [3
 
-] [4
-
 ]
 Missing character: There is no − in font cmss10!
 Missing character: There is no − in font cmss8!
- [5
+ [4
+
+] [5
 
 ] [6
 
@@ -1002,33 +1062,75 @@ Missing character: There is no − in font cmss8!
 
 ] [8
 
-] [9
-
 ]
 File: PNL.png Graphic file (type QTm)
- <use  "PNL.png" > [10
+ <use  "PNL.png" > [9
+
+] [10
 
 ] [11
-
-] [12
 
 ]
 File: alg.png Graphic file (type QTm)
 
-<use  "alg.png" > [13
+<use  "alg.png" > [12
 
 ]
 File: linear.png Graphic file (type QTm)
- <use  "linear.png" > [14
+ <use  "linear.png" > [13
 
 ]
 File: dif.png Graphic file (type QTm)
- <use  "dif.png" > [15
+ <use  "dif.png" > [14
 
 ]
-(./slide.bbl) [16
+File: experimentAltTempcut.pdf Graphic file (type QTm)
 
-] [17
+<use  "experimentAltTempcut.pdf" >
+File: experimentAltSuncut.pdf Graphic file (type QTm)
+ <use  "experimentAltSuncut.pdf" >
+File: experimentSunTempcut.pdf Graphic file (type QTm)
+
+<use  "experimentSunTempcut.pdf" > [15
+
+] [16
+
+]
+File: dimred.png Graphic file (type QTm)
+ <use  "dimred.png" > [17
+
+]
+File: ican.png Graphic file (type QTm)
+
+<use  "ican.png" >
+Overfull \hbox (9.02504pt too wide) in paragraph at lines 423--423
+[][]  
+ []
+
+[18
+
+] [19
+
+]
+\openout4 = `slide.vrb'.
+
+ (./slide.vrb
+File: timinoalg.png Graphic file (type QTm)
+ <use  "timinoalg.png" >) [20
+
+] [21
+
+]
+File: timino.png Graphic file (type QTm)
+ <use  "timino.png" >
+Overfull \hbox (15.60995pt too wide) in paragraph at lines 485--485
+ [] 
+ []
+
+File: nonlin.png Graphic file (type QTm)
+<use  "nonlin.png" > [22
+
+] (./slide.bbl) [23
 
 ]
 \tf@nav=\write6
@@ -1040,25 +1142,25 @@ File: dif.png Graphic file (type QTm)
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 495.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 495.
  (./slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 315.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 495.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 495.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 495.
  ) 
 Here is how much of TeX's memory you used:
- 21038 strings out of 493591
- 380081 string characters out of 6143545
- 453829 words of memory out of 5000000
- 24012 multiletter control sequences out of 15000+600000
- 18679 words of font info for 66 fonts, out of 8000000 for 9000
+ 23581 strings out of 493591
+ 443156 string characters out of 6143545
+ 515275 words of memory out of 5000000
+ 26504 multiletter control sequences out of 15000+600000
+ 18974 words of font info for 67 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 56i,21n,57p,417b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,21n,59p,417b,1143s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.pdf (17 pages).
+Output written on slide.pdf (23 pages).

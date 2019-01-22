@@ -4,45 +4,46 @@ The top-level auxiliary file: slide.aux
 The style file: plainnat.bst
 Database file #1: bib.bib
 Warning--empty publisher in hoyer
-You've used 3 entries,
+Warning--empty publisher in time
+You've used 5 entries,
             2773 wiz_defined-function locations,
-            611 strings with 5432 characters,
-and the built_in function-call counts, 1921 in all, are:
-= -- 176
-> -- 108
-< -- 3
-+ -- 36
-- -- 33
-* -- 155
-:= -- 277
-add.period$ -- 10
-call.type$ -- 3
-change.case$ -- 20
-chr.to.int$ -- 3
-cite$ -- 7
-duplicate$ -- 87
-empty$ -- 151
-format.name$ -- 38
-if$ -- 415
+            621 strings with 5779 characters,
+and the built_in function-call counts, 3052 in all, are:
+= -- 275
+> -- 177
+< -- 4
++ -- 59
+- -- 54
+* -- 245
+:= -- 439
+add.period$ -- 17
+call.type$ -- 5
+change.case$ -- 33
+chr.to.int$ -- 5
+cite$ -- 12
+duplicate$ -- 145
+empty$ -- 246
+format.name$ -- 61
+if$ -- 663
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 12
-pop$ -- 43
+missing$ -- 5
+newline$ -- 33
+num.names$ -- 20
+pop$ -- 77
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 28
 quote$ -- 0
-skip$ -- 75
+skip$ -- 117
 stack$ -- 0
-substring$ -- 101
-swap$ -- 22
-text.length$ -- 2
+substring$ -- 137
+swap$ -- 34
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 33
-warning$ -- 1
-while$ -- 17
+type$ -- 55
+warning$ -- 2
+while$ -- 26
 width$ -- 0
-write$ -- 47
-(There was 1 warning)
+write$ -- 72
+(There were 2 warnings)

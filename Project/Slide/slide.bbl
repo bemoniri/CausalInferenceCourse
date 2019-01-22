@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,19 @@ Patrik~O. Hoyer, Dominik Janzing, Joris~M Mooij, Jonas Peters, and Bernhard
 \newblock Nonlinear causal discovery with additive noise models.
 \newblock In \emph{Advances in Neural Information Processing Systems 21}, pages
   689--696. 2009.
+
+\bibitem[Janzing et~al.(2009)Janzing, Peters, Mooij, and
+  Sch{\"o}lkopf]{confounder}
+Dominik Janzing, Jonas Peters, Joris~M. Mooij, and Bernhard Sch{\"o}lkopf.
+\newblock Identifying confounders using additive noise models.
+\newblock In \emph{UAI}, 2009.
+
+\bibitem[Peters et~al.(2013)Peters, Janzing, and Sch\"{o}lkopf]{time}
+Jonas Peters, Dominik Janzing, and Bernhard Sch\"{o}lkopf.
+\newblock Causal inference on time series using restricted structural equation
+  models.
+\newblock In \emph{Advances in Neural Information Processing Systems 26}, pages
+  154--162. 2013.
 
 \bibitem[Peters et~al.(2014)Peters, Mooij, Janzing, and
   Sch\"{o}lkopf]{continous}

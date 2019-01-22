@@ -3,10 +3,11 @@
 %\usetheme{Dresden}
 \usetheme{CambridgeUS}
 }
-\usepackage{graphicx}
+\newcommand{\subitem}{\par\qquad}
 \usepackage{booktabs}
-\usepackage{algorithm,algpseudocode}
 
+\usepackage{tikz}
+\usepackage{subfigure}	
 \usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -103,7 +104,7 @@
 \newcommand{\td}{\delta}
 \newcommand{\tnu}{\tilde \nu}
 
-\title[Additive Noise Models]{Additive Noise Models: Identifiability, Learning Algorithms, Hidden Variables and Time Series} 
+\title[Additive Noise Models]{Additive Noise Models: Identifiability Theorems, Learning Algorithms, Hidden Variables and Time Series} 
 
 \author{Behrad Moniri}
 \institute[EE @ Sharif] 
@@ -112,9 +113,14 @@ Sharif University of Technology \\
 \medskip
 \textit{bemoniri@ee.sharif.edu}
 }
-\date{\today}
+\date{}
+\titlegraphic{\includegraphics[width=2cm]{logo.png}\hspace*{-9.75cm}~%
+%	\includegraphics[width=2cm]{logo.png}
+}
 \newcommand{\bigCI}{\mathrel{\text{\scalebox{1.07}{$\perp\mkern-10mu\perp$}}}}
 \begin{document}
+\section{EE-25570 Causal Inference}
+\subsection{Presentation of the Final Course Project}
 \begin{frame}
 \titlepage
 \end{frame}
@@ -142,14 +148,9 @@ For those models with strictly positive density, causal minimality reduces to th
 \begin{frame}
 \frametitle{Identifiability: The Bivariate Case}
  \cite{hoyer} proves the following theorem about the identifiability of  bivariate additive noise models.
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Identifiability: The Bivariate Case}
 \begin{theorem}
 \begin{small}
-An additive noise model with two variables, i.e., $X_1 = N_1$ and $X_2 = f_j(X_1) + N_2$, with $N_1 \bigCI N_2$, is identifiable if it does not solve the following differential equation for all $x_i,x_j$ with $\nu''(x_j-f(x_i))f'(x_i)\neq 0$:
+An additive noise model with two variables, i.e., $X_1 = N_1$ and $X_2 = f(X_1) + N_2$, with $N_1 \bigCI N_2$, is identifiable if it does not solve the following differential equation for all $x_i,x_j$ with $\nu''(x_j-f(x_i))f'(x_i)\neq 0$:
 
 \begin{equation*}
 \begin{split}
@@ -187,7 +188,7 @@ so the model is not identifiable.
 \begin{definition} \label{def:wnn}
 	Consider an ANM with $p$ variables. We call this SCM a \emph{restricted additive noise model} if for all $j \in \B{V}$, $i \in \PA{j}$ and all sets  $\B{S} \subseteq \B{V}$ with  $\PA{j} \setminus \{i\} \subseteq \B{S} \subseteq \ND{j} \setminus \{i,j\}$, there is an $x_{\B{S}}$ with $p_{\B{S}}(x_{\B{S}}) > 0$, such that
 	\begin{equation*}
-	\Big(f_j(x_{\PA{j}\setminus \{i\}}, X_i), \law{X_i \given X_{\B{S}}=x_{\B{S}}}, \law{N_j}\Big)
+	\Big(f_j(x_{\PA{j}\setminus \{i\}}, X_i), P(X_i \given X_{\B{S}}=x_{\B{S}}), P(N_j)\Big)
 	\end{equation*}
 	satisfies the bivariate identifiability conditions.
 	
@@ -235,14 +236,20 @@ Assume that $x_2 = f_2(f_1(x_1) + e2) \;\;\mathrm{and} \;\;x_1 = g_2(g_1(x_2) + 
 \section{Learning Algorithms}
 \subsection{Score Based Method}
 \begin{frame}
-\frametitle{Score Based Method}
+\frametitle{Learning Algorithms : Score Based Method}
+\begin{itemize}
+\item The score proposed by \cite{continous}:
+$$\hat{G} = \mathrm{argmin}_G \sum_{i=1}^n \mathrm{DM}(res_i^{G, \mathrm{RM}}, res_{-i}^{G, \mathrm{RM}}) + \lambda \#\mathrm{edges}$$
+\item DM = Dependence Method \hspace{1cm} RM = Regression Method
+\item Idea : Noises are independent
+\item They do not prove (or even claim) that the minimizing of the above score is a consistent estimator for the correct DAG.
+\item Learning Algorithm: Greedy DAG Search or Brute Force (Only for small graphs)
+\end{itemize}
 \end{frame}
-
-
 
 \subsection{RESIT}
 \begin{frame}
-\frametitle{RESIT Algorithm}
+\frametitle{Learning Algorithms : RESIT Algorithm}
 \begin{itemize}
 	\item First proposed in \cite{continous}
 	\item Assumption : Multivariate ANM + Causal Sufficiency 
@@ -261,7 +268,7 @@ Assume that $x_2 = f_2(f_1(x_1) + e2) \;\;\mathrm{and} \;\;x_1 = g_2(g_1(x_2) + 
 \end{frame}
 
 \begin{frame}
-\frametitle{RESIT Algorithm}
+\frametitle{Learning Algorithms : RESIT Algorithm}
 \begin{figure}
 	\includegraphics[scale=0.2]{alg.png}
 \end{figure}
@@ -297,19 +304,192 @@ $\alpha_j \stackrel{}{\sim} U([2,4])$. }
 	\caption{Structural Hamming Distance of Estimated Graph}
 \end{figure}
 \end{frame}
+
+\begin{frame}
+Average Temperature, Altitude, Duration of Sunlight from 349 German weather stations.
+
+\begin{figure}[h!]
+\frametitle{Real Dataset?}
+	\begin{center}
+		\includegraphics[width=0.31\textwidth]{experimentAltTempcut}
+		\hspace{0.02\textwidth}
+		\includegraphics[width=0.31\textwidth]{experimentAltSuncut}
+		\hspace{0.02\textwidth}
+		\includegraphics[width=0.31\textwidth]{experimentSunTempcut}
+	\end{center}
+	\caption{Scatter plot of the data}
+	\label{fig:alt}
+\end{figure}
+
+\end{frame}
+\begin{frame}
+\frametitle{Real Dataset!}
+Output graph of different algorithms:
+\vspace{1cm}
+\begin{figure}
+	\centering
+		\begin{tabular}{| c| c |}
+			\hline
+			Method & Graph \\
+			\hline\hline
+			LiNGAM & $T \rightarrow A$ \\
+			\hline
+			PC &  $T \rightarrow A \leftarrow DS$ \\
+			\hline
+			CPC& $T \rightarrow A \leftarrow DS$ \\
+			\hline
+			GDS& $T \leftarrow A \rightarrow DS$\\
+			\hline
+			BF& $T \leftarrow A \rightarrow DS$\\
+			\hline
+			RESIT&$T \leftarrow A \rightarrow DS$\\
+			\hline
+		\end{tabular}
+	\end{figure}
+\end{frame}
+
 \section{Hidden Variables}
+\begin{frame}
+\frametitle{Confounder Detection in The Bivariate Case}
+\begin{columns}
+\begin{column}{0.33\textwidth}
+\scriptsize{
+	\begin{equation*}
+	\begin{cases}
+	X = f(T) + N_X\\
+	Y = g(T) + N_Y
+	\end{cases}
+	\end{equation*}
+}
+\begin{figure}
+\begin{tikzpicture}[->,shorten >=1pt,auto,node distance=1.5cm,
+thick,main node/.style={circle,draw,font=\sffamily\large\bfseries}]
+\node[main node] (x) {X};
+\node[main node] (y) [right of=x] {Y};
+\path[every node/.style={font=\sffamily\small}]
+(x) edge node [right] {} (y);
+\end{tikzpicture}
+\end{figure}
+\begin{figure}
+\begin{tikzpicture}[->,shorten >=1pt,auto,node distance=1.5cm,
+thick,main node/.style={circle,draw,font=\sffamily\large\bfseries}]
+\node[main node] (w) {T};
+\node[main node] (x) [below left of=w] {X};
+\node[main node] (y) [below right of=w] {Y};
+\path[every node/.style={font=\sffamily\small}]
+(w) edge node [left] {} (x)
+(w) edge node [left] {} (y);
+\end{tikzpicture}
+\end{figure}
+\begin{figure}
+\begin{tikzpicture}[->,shorten >=1pt,auto,node distance=1.5cm,
+thick,main node/.style={circle,draw,font=\sffamily\large\bfseries}]
+\node[main node] (x) {X};
+\node[main node] (y) [right of = x]{Y};
+\path[every node/.style={font=\sffamily\small}]
+(y) edge node [left] {} (x);
+\end{tikzpicture}
+\end{figure}
+
+\end{column}
+
+\begin{column}{0.67\textwidth}
+\scriptsize{
+\underline{Naive Method: Dimension Reduction}
+$$\hat{T}_k = \mathrm{argmin}_{t\in[0,1]} ||(X_k, Y_k) - \mathbf{s}(t)||_2$$ find $\hat{\mathbf{s}}$ that minimizes 
+$\sum^n_{k=1} ||(X_k, Y_k) - \mathbf{s}(\hat{T}_k)||_2$. Then test the independence of noise variables}
+\begin{figure}
+	\includegraphics[scale = 0.17]{dimred.png}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+\subsection{ICAN}
+\begin{frame}
+\frametitle{Confounder: ICAN Algorithm}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	\includegraphics[scale=0.25]{ican.png}
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{itemize}
+		\item The Naive method does not work even in simple cases.
+		\item ICAN was first introduced in \cite{confounder}.
+		\item Idea: Minimizing dependence instead of the $l_2$ norm.
+		\item Proof of consistency only for the low noise regime. The algorithm seems to work in large noise regime as well.
+	\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
 \section{Time Series}
+\subsection{TiMINo}
+\begin{frame}
+\frametitle{Time Series : TiMINo}
+\begin{definition} \label{def:timino}
+	Consider a time series $\X_t=(X^i_t)_{i \in V}$. We say the time series satisfies a \emph{TiMINo} if there is a $p>0$ and if $\forall i \in V$ there are sets $\PA[i]{0} \subseteq X^{V\setminus\{i\}}, \PA[i]{k} \subseteq X^V$, s.t. $\forall t$
+	%\begin{equation} \label{anm}
+	%X^j_t = \sum_{\tau=1}^p \sum_{i \in U} f_{i,\tau}(X_i(t-\tau)) + \eps_j(t)\,, \qquad U \subset V\,,
+	%\end{equation}
+	%where not all $f_{i,\tau}\equiv \mathrm{const.}$.
+	\begin{align} \label{anm}
+	X^i_t = f_{i}\big((\PA[i]{p})_{t-p}, \ldots, (\PA[i]{1})_{t-1}, (\PA[i]{0})_{t}, \eps^i_t\big)\,,
+	\end{align}
+	with  
+	%If $f_{j,i}$ is not constant in component $X^{i}_{t-h}$ we draw an arrow from $X^{i}_{t-h}$ to $X^j_t$ in the full time graph 
+	$\eps^i_t$ (jointly) independent and for each $i$, $\eps^i_t$ identically distributed in $t$ and the full time graph is acyclic.
+\end{definition}
+\cite{time}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Time Series : TiMINo}
+\begin{figure}
+	\includegraphics[scale=0.2]{timinoalg.png}
+\end{figure}
+TiMINo causality has to be provided with a fitting method.
+e.g. VAR fitting,  generalized additive models (gam) and  GP regression. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Time Series : Granger Causality vs. TiMINo}
+\begin{itemize}
+\item TiMINo allows instantaneous effects.
+\item Shifted Time Series ($\tilde{X}_t^i = X_{t-l_i}^i$) \hspace{0.5cm} for example in fMRI Data.  There might be causal relations backwards in time and Granger Causality might fail in these cases. In TiMINo, the summary graph is identifiable.
+\item in some cases, TiMINo output is "Can't Decide"
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item a simple case with confounder:
+\begin{figure}
+	\includegraphics[scale=0.21]{timino.png}
+\end{figure}
+
+\item
+\tiny{
+\begin{equation*}
+\begin{cases}
+X_t=0.8 X_{t-1} + 0.3 \eps_{X,t}\\
+Y_t=0.4 Y_{t-1} + (X_{t-1}-1)^2 +0.3\eps_{Y,t}\\
+Z_t=0.4 Z_{t-1} + 0.5 \cos(Y_{t-1}) + \sin(Y_{t-1}) +0.3\eps_{Z,t}
+\end{cases}
+\end{equation*}
+\begin{figure}
+	\includegraphics[scale=0.2]{nonlin.png}
+\end{figure}
+}
+\end{itemize}
+\end{frame}
+\section{Refrences}
 \begin{frame}
 \frametitle{References}
+\scriptsize{
 \bibliographystyle{plainnat}
 \bibliography{bib}
+}
 \end{frame}
-%------------------------------------------------
-
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}

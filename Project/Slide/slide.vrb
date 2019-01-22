@@ -1,4 +1,6 @@
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
+\frametitle{Time Series : TiMINo}
+\begin{figure}
+^^I\includegraphics[scale=0.2]{timinoalg.png}
+\end{figure}
+TiMINo causality has to be provided with a fitting method.
+e.g. VAR fitting,  generalized additive models (gam) and  GP regression.

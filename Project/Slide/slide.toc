@@ -1,11 +1,16 @@
 \beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{Model Definition}{2}{0}{1}
-\beamer@sectionintoc {2}{Identifiability}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{Bivariate Case}{3}{0}{2}
-\beamer@subsectionintoc {2}{2}{Multivariate Case}{6}{0}{2}
-\beamer@subsectionintoc {2}{3}{PNL}{8}{0}{2}
-\beamer@sectionintoc {3}{Learning Algorithms}{11}{0}{3}
-\beamer@subsectionintoc {3}{1}{Score Based Method}{11}{0}{3}
-\beamer@subsectionintoc {3}{2}{RESIT}{12}{0}{3}
-\beamer@sectionintoc {4}{Hidden Variables}{16}{0}{4}
-\beamer@sectionintoc {5}{Time Series}{16}{0}{5}
+\beamer@sectionintoc {1}{EE-25570 Causal Inference}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{Presentation of the Final Course Project}{1}{0}{1}
+\beamer@sectionintoc {2}{Model Definition}{2}{0}{2}
+\beamer@sectionintoc {3}{Identifiability}{3}{0}{3}
+\beamer@subsectionintoc {3}{1}{Bivariate Case}{3}{0}{3}
+\beamer@subsectionintoc {3}{2}{Multivariate Case}{5}{0}{3}
+\beamer@subsectionintoc {3}{3}{PNL}{7}{0}{3}
+\beamer@sectionintoc {4}{Learning Algorithms}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Score Based Method}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{RESIT}{11}{0}{4}
+\beamer@sectionintoc {5}{Hidden Variables}{17}{0}{5}
+\beamer@subsectionintoc {5}{1}{ICAN}{18}{0}{5}
+\beamer@sectionintoc {6}{Time Series}{19}{0}{6}
+\beamer@subsectionintoc {6}{1}{TiMINo}{19}{0}{6}
+\beamer@sectionintoc {7}{Refrences}{23}{0}{7}
