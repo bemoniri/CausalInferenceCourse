@@ -5,45 +5,45 @@ The style file: plainnat.bst
 Database file #1: bib.bib
 Warning--empty publisher in hoyer
 Warning--empty publisher in time
-You've used 5 entries,
+You've used 6 entries,
             2773 wiz_defined-function locations,
-            621 strings with 5779 characters,
-and the built_in function-call counts, 3052 in all, are:
-= -- 275
-> -- 177
-< -- 4
-+ -- 59
-- -- 54
-* -- 245
-:= -- 439
-add.period$ -- 17
-call.type$ -- 5
-change.case$ -- 33
-chr.to.int$ -- 5
-cite$ -- 12
-duplicate$ -- 145
-empty$ -- 246
-format.name$ -- 61
-if$ -- 663
+            628 strings with 5907 characters,
+and the built_in function-call counts, 3498 in all, are:
+= -- 316
+> -- 198
+< -- 5
++ -- 66
+- -- 60
+* -- 281
+:= -- 506
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 38
+chr.to.int$ -- 6
+cite$ -- 14
+duplicate$ -- 165
+empty$ -- 286
+format.name$ -- 70
+if$ -- 759
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 33
-num.names$ -- 20
-pop$ -- 77
+missing$ -- 6
+newline$ -- 38
+num.names$ -- 24
+pop$ -- 85
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 32
 quote$ -- 0
-skip$ -- 117
+skip$ -- 133
 stack$ -- 0
-substring$ -- 137
-swap$ -- 34
+substring$ -- 160
+swap$ -- 35
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 55
+type$ -- 66
 warning$ -- 2
-while$ -- 26
+while$ -- 30
 width$ -- 0
-write$ -- 72
+write$ -- 85
 (There were 2 warnings)

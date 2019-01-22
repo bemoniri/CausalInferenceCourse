@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,6 +18,11 @@ Patrik~O. Hoyer, Dominik Janzing, Joris~M Mooij, Jonas Peters, and Bernhard
 Dominik Janzing, Jonas Peters, Joris~M. Mooij, and Bernhard Sch{\"o}lkopf.
 \newblock Identifying confounders using additive noise models.
 \newblock In \emph{UAI}, 2009.
+
+\bibitem[Nowzohour and B\"{u}hlmann(2016)]{nowzohour}
+Christopher Nowzohour and Peter B\"{u}hlmann.
+\newblock Score-based causal learning in additive noise models.
+\newblock \emph{Statistics}, 50\penalty0 (3):\penalty0 471--485, 2016.
 
 \bibitem[Peters et~al.(2013)Peters, Janzing, and Sch\"{o}lkopf]{time}
 Jonas Peters, Dominik Janzing, and Bernhard Sch\"{o}lkopf.
