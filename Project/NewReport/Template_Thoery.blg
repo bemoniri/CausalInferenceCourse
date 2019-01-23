@@ -9,45 +9,45 @@ Warning--empty publisher in hoyer
 Warning--empty publisher in time
 
 Done.
-You've used 6 entries,
+You've used 7 entries,
             2725 wiz_defined-function locations,
-            694 strings with 6349 characters,
-and the built_in function-call counts, 2931 in all, are:
-= -- 267
-> -- 97
+            695 strings with 6436 characters,
+and the built_in function-call counts, 3312 in all, are:
+= -- 293
+> -- 119
 < -- 4
-+ -- 41
-- -- 34
-* -- 215
-:= -- 389
-add.period$ -- 20
-call.type$ -- 6
-change.case$ -- 35
++ -- 50
+- -- 42
+* -- 237
+:= -- 444
+add.period$ -- 23
+call.type$ -- 7
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 116
-empty$ -- 222
-format.name$ -- 34
-if$ -- 727
+cite$ -- 9
+duplicate$ -- 132
+empty$ -- 251
+format.name$ -- 42
+if$ -- 823
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 77
-newline$ -- 60
-num.names$ -- 12
-pop$ -- 43
+int.to.str$ -- 7
+missing$ -- 92
+newline$ -- 69
+num.names$ -- 14
+pop$ -- 55
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 35
 quote$ -- 0
-skip$ -- 84
+skip$ -- 91
 stack$ -- 0
-substring$ -- 203
-swap$ -- 46
+substring$ -- 208
+swap$ -- 48
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 4
-type$ -- 24
+type$ -- 28
 warning$ -- 2
-while$ -- 27
-width$ -- 7
-write$ -- 87
+while$ -- 29
+width$ -- 8
+write$ -- 99
 (There were 2 warnings)

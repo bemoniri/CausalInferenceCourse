@@ -4,10 +4,15 @@
 \BOOKMARK [2][-]{subsection.3.1}{حالت دو متغیره}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{حالت چند متغیره}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{Post\040Non-Linear\040Models}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{الگوریتم‌های یادگیری}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{الگوریتم RESIT }{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{روش Brute Force و GDS }{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{مقایسه‌ی الگوریتم‌های‌ RESIT، Brute Force و GDS با سایر الگوریتم‌ها }{section.4}% 10
-\BOOKMARK [3][-]{subsubsection.4.3.1}{ حالت SCM خطی }{subsection.4.3}% 11
-\BOOKMARK [2][-]{subsection.4.4}{حالت SCM غیرخطی }{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.5}{بررسی داده‌های واقعی؟!}{section.4}% 13
+\BOOKMARK [2][-]{subsection.3.4}{مقایسه‌ی نتایج}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{الگوریتم‌های یادگیری}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{الگوریتم RESIT }{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{روش Brute Force و GDS }{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{مقایسه‌ی الگوریتم‌های‌ RESIT، Brute Force و GDS با سایر الگوریتم‌ها }{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.3.1}{ حالت SCM خطی }{subsection.4.3}% 12
+\BOOKMARK [3][-]{subsubsection.4.3.2}{حالت SCM غیرخطی }{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.3}{بررسی داده‌های واقعی؟!}{subsection.4.3}% 14
+\BOOKMARK [1][-]{section.5}{متغیر‌های پنهان}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{روش ساده‌لوحانه}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{الگوریتم ICAN}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{سری‌های زمانی}{}% 18

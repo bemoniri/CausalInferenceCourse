@@ -27,8 +27,17 @@
 
 \begin{LTRbibitems}
 \resetlatinfont
+\bibitem{confounder}
+\textsc{ Janzing, D., Peters, J., Mooij, J.~M., and Sch{\"o}lkopf, B.}
+\newblock Identifying confounders using additive noise models.
+\newblock  in {\em UAI\/} (2009).
+
+\end{LTRbibitems}
+
+\begin{LTRbibitems}
+\resetlatinfont
 \bibitem{nowzohour}
-\textsc{ Nowzohour, C., and Bühlmann, P.}
+\textsc{ Nowzohour, C., and B\"{u}hlmann, P.}
 \newblock Score-based causal learning in additive noise models.
 \newblock {\em Statistics 50}, 3 (2016), 471--485.
 
@@ -50,7 +59,7 @@
 \bibitem{continous}
 \textsc{ Peters, J., Mooij, J.~M., Janzing, D., and Sch\"{o}lkopf, B.}
 \newblock Causal discovery with continuous additive noise models.
-\newblock {\em J. Mach. Learn. Res. 15}, 1 (Jan. 2014), 2009--2053.
+\newblock {\em J. Mach. Learn. Res. 15}, 1 (2014), 2009--2053.
 
 \end{LTRbibitems}
 
@@ -60,8 +69,7 @@
 \textsc{ Zhang, K., and Hyv\"{a}rinen, A.}
 \newblock On the identifiability of the post-nonlinear causal model.
 \newblock  in {\em Proceedings of the Twenty-Fifth Conference on Uncertainty in
-  Artificial Intelligence\/} (Arlington, Virginia, United States, 2009), UAI
-  '09,  pp. 647--655.
+  Artificial Intelligence\/} (2009), UAI '09,  pp. 647--655.
 
 \end{LTRbibitems}
 
