@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  23 JAN 2019 10:58
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2018.11.11)  24 JAN 2019 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1517,31 +1517,31 @@ as'Yas' on input line 36.
 (./Template_Thoery.aux)
 \openout1 = `Template_Thoery.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 87.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 157.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    ... okay on input line 157.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1580,7 +1580,7 @@ LaTeX Font Info:    ... okay on input line 87.
 \c@lstlisting=\count308
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring ON on input line 87.
+Package hyperref Info: Link coloring ON on input line 157.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1590,150 +1590,181 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count309
 )
-LaTeX Info: Redefining \ref on input line 87.
-LaTeX Info: Redefining \pageref on input line 87.
-LaTeX Info: Redefining \nameref on input line 87.
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
 
 (./Template_Thoery.out) (./Template_Thoery.out)
 \@outlinefile=\write4
 \openout4 = `Template_Thoery.out'.
 
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 91.
+(Font)              scaled to size 14.4pt on input line 161.
 
-Overfull \hbox (3.43448pt too wide) in paragraph at lines 92--98
+Overfull \hbox (3.43448pt too wide) in paragraph at lines 162--168
 []\EU1/Nazli(0)/m/n/14.4 گزارش پروژه تحقیقاتی نظری  شماره دانشجویی: ۹۵۱۰۹۵۶۴[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--98
+Underfull \hbox (badness 10000) in paragraph at lines 162--168
 [][]
  []
 
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/bx/n' will be
-(Font)              scaled to size 14.4pt on input line 102.
+(Font)              scaled to size 14.4pt on input line 172.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 107.
+(Font)              scaled to size 17.28pt on input line 179.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/bx/n' will be
-(Font)              scaled to size 17.28pt on input line 107.
-(./Template_Thoery.toc
-LaTeX Font Info:    Font shape `EU1/Nazli(0)/bx/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+stmry on input line 4.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 14.39996pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 9.59998pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
-(Font)              scaled to size 7.19998pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 14.39996pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 9.59998pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
-(Font)              scaled to size 7.19998pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 14.39996pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 9.59998pt on input line 4.
-LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
-(Font)              scaled to size 7.19998pt on input line 4.
-)
-\tf@toc=\write5
-\openout5 = `Template_Thoery.toc'.
-
-
+(Font)              scaled to size 17.28pt on input line 179.
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-[1
+LaTeX Font Info:    Try loading font information for U+msa on input line 202.
 
-]
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 202.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 202.
+
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
+(Font)              scaled to size 14.39996pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
+(Font)              scaled to size 9.59998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/n' will be
+(Font)              scaled to size 7.19998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
+(Font)              scaled to size 14.39996pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
+(Font)              scaled to size 9.59998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/bx/n' will be
+(Font)              scaled to size 7.19998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
+(Font)              scaled to size 14.39996pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
+(Font)              scaled to size 9.59998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Yas(0)/m/it' will be
+(Font)              scaled to size 7.19998pt on input line 202.
+LaTeX Font Info:    Font shape `EU1/Nazli(0)/bx/n' will be
+(Font)              scaled to size 12.0pt on input line 208.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 138.
+(Font)              scaled to size 8.0pt on input line 208.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 138.
+(Font)              scaled to size 6.0pt on input line 208.
 
 
 LaTeX Font Warning: Font shape `EU1/Nazli(0)/m/it' undefined
-(Font)              using `EU1/Nazli(0)/m/n' instead on input line 162.
+(Font)              using `EU1/Nazli(0)/m/n' instead on input line 232.
 
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 175.
-[2]
+(Font)              scaled to size 12.0pt on input line 245.
+[1
+
+] [2]
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/bx/it' will be
-(Font)              scaled to size 12.0pt on input line 294.
+(Font)              scaled to size 12.0pt on input line 364.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 294.
+(Font)              scaled to size 8.0pt on input line 364.
 LaTeX Font Info:    Font shape `EU1/Nazli(0)/m/it' will be
-(Font)              scaled to size 6.0pt on input line 294.
+(Font)              scaled to size 6.0pt on input line 364.
  [3] [4] [5]
 File: pnl.png Graphic file (type QTm)
  <use  "pnl.png" > [6]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 686.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7] [8]
+put line 756.
+ [7]
 File: linear.png Graphic file (type QTm)
  <use  "linear.png" >
-Overfull \hbox (7.8563pt too wide) in paragraph at lines 858--861
+Overfull \hbox (7.8563pt too wide) in paragraph at lines 928--931
  [][][][][][] 
  []
 
+[8]
 File: dif.png Graphic file (type QTm)
-<use  "dif.png" >
-Overfull \hbox (2.37581pt too wide) in paragraph at lines 913--916
+ <use  "dif.png" >
+Overfull \hbox (2.37581pt too wide) in paragraph at lines 983--986
  [][][][][][] 
  []
 
-[9]
 File: experimentAltTempcut.pdf Graphic file (type QTm)
- <use  "experimentAltTempcut.pdf" >
+<use  "experimentAltTempcut.pdf" >
 File: experimentAltSuncut.pdf Graphic file (type QTm)
  <use  "experimentAltSuncut.pdf" >
 File: experimentSunTempcut.pdf Graphic file (type QTm)
 
-<use  "experimentSunTempcut.pdf" > [10]
+<use  "experimentSunTempcut.pdf" > [9]
 File: ican.png Graphic file (type QTm)
  <use  "ican.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./Template_Thoery.bbl [11]) [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1042.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1042.
+[10]
+Missing character: There is no − in font cmr12!
+File: ican1.png Graphic file (type QTm)
+ <use  "ican1.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11]
+File: kabe.png Graphic file (type QTm)
+ <use  "kabe.png" >
+Missing character: There is no ـ in font cmmi12!
+
+! Undefined control sequence.
+l.1229 ...ensional time series of length $T$: $(\X
+                                                  _1, \ldots, \X_T)$, maxima...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1229 ...series of length $T$: $(\X_1, \ldots, \X
+                                                  _T)$, maximal order $p$\vs...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+File: confounder.png Graphic file (type QTm)
+ <use  "confounder.png" >
+File: ts.png Graphic file (type QTm)
+ <use  "ts.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] (./Template_Thoery.bbl [14]) [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1390.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1390.
  (./Template_Thoery.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1042.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1042.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1390.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1390.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1042.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1390.
  ) 
 Here is how much of TeX's memory you used:
- 36755 strings out of 493591
- 695598 string characters out of 6143545
- 751398 words of memory out of 5000000
- 39551 multiletter control sequences out of 15000+600000
+ 36832 strings out of 493591
+ 695898 string characters out of 6143545
+ 748998 words of memory out of 5000000
+ 39627 multiletter control sequences out of 15000+600000
  11735 words of font info for 93 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 55i,10n,63p,10404b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,63p,10404b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Template_Thoery.pdf (12 pages).
+Output written on Template_Thoery.pdf (15 pages).

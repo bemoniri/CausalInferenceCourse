@@ -82,7 +82,77 @@
 \def\Tr{{\rm Tr}}
 \def\.{{\cdot}}
 \def\la{\lambda}
+\newcommand{\onemat}[0]{{\mathbf 1}}
+\newcommand{\cV}{{\cal V}}
+\newcommand{\cX}{{\cal X}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\cY}{{\cal Y}}
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cB}{{\cal B}}\newcommand{\cL}{{\cal L}}
+\newcommand{\cW}{{\cal W}}
+\newcommand{\cI}{{\cal I}}
+\newcommand{\cD}{{\cal D}}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cC}{{\cal C}}
+\newcommand{\cR}{{\cal R}}
+\newcommand{\HSIC}{{\mathrm{HSIC}}}
+\newcommand{\dep}{{\mathrm{DEP}}}
+\newcommand{\s}{{{\mathbf s}}}
+\newcommand{\cH}{{\cal H}}
+\newcommand{\cG}{{\cal G}}
+\newcommand{\cS}{{\cal S}}
+\newcommand{\cT}{{\cal T}}
+\newcommand{\tl}{\tilde}
 
+\newcommand{\E}{{\cal E}}
+
+\newcommand{\ifmoclin}{{IFMOC$_\mathrm{lin}$ }}
+\newcommand{\ifmocgp}{{IFMOC$_\mathrm{GP}$ }}
+%\newcommand{\ffmoc}{{$\C{F}$-FMOC}}
+%\newcommand{\ffmo}{{$\C{F}$-FMO}}
+%\newcommand{\Gp}{\C{G}'}
+%\newcommand{\G}{\C{G}}
+\newcommand{\Gc}{\C{G}_c}
+\newcommand{\mean}{{\mathbf E}}  
+\newcommand{\var}{{\mathbf{var}}}  
+%\newcommand{\var}{{\mathbb{V}\mathrm{ar}}}  
+\newcommand{\eps}{{N}}  
+\newcommand{\PA}[2][]{{\B{PA}}^{#1}_{#2}}
+\newcommand{\tPA}[2][]{{\tilde{\B{PA}}}^{#1}_{#2}}
+\newcommand{\CH}[2][]{{\B{CH}}^{#1}_{#2}}
+\newcommand{\DE}[2][]{{\B{DE}}^{#1}_{#2}}
+\newcommand{\ND}[2][]{{\B{ND}}^{#1}_{#2}}
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\given}{\,|\,}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\supnorm}[1]{\lVert#1\rVert_\infty}
+\newcommand{\norm}[1]{\left\Vert{#1}\right\Vert\,}
+\newcommand{\supp}{{\mathrm{supp}\,}}
+% \newcommand{\argmax}{{\mathrm{argmax}\,}}
+% \newcommand{\argmin}{{\mathrm{argmin}\,}}
+\newcommand{\im}{\mathrm{Im}}
+\newcommand{\DM}{\mathrm{DM}}
+\newcommand{\tn}{{\tilde{n}}}
+\newcommand{\paxi}{{\bf x}_{\mbox{pa}(i)}}
+\newcommand{\dd}{{\partial }}
+\newcommand{\dx}{{\partial x}}
+\newcommand{\dy}{{\partial y}}
+\newcommand{\btheta}{{\bf \theta}}
+\newcommand{\easy}{$\bullet$}                   %easy problem
+\newcommand{\law}[1]{\mathcal{L}({#1})}
+\newcommand{\lawX}{{\law{\mathbf X}}}
+\newcommand{\lawn}[1]{\mathcal{L}_n({#1})}
+\newcommand{\lawN}{{\law{\mathbf N}}}
+\newcommand{\llaw}{{\mathbf{law}_X}}
+\newcommand{\todo}[1]{{\color{red} TODO: {#1}}}
+\newcommand{\Lequ}{\overset{\mathcal{L}}{=}}
+\newcommand{\SEM}{SEM }
+\newcommand{\DAG}{DAG }
+\newcommand{\SEMs}{SEMs }
+\newcommand{\DAGs}{DAGs }
+\newcommand{\tc}{\gamma}
+\newcommand{\td}{\delta}
+\newcommand{\tnu}{\tilde \nu}
 
 \begin{document}
 \begin{center}
@@ -104,7 +174,7 @@
 بهراد منیری
 \end{large}
 \end{center}
-\tableofcontents
+
 
 \section{مقدمه}
 در این پروژه به بررسی مدل‌های نویز جمعی،
@@ -1029,14 +1099,292 @@ $$(N_x, N_y) = (X, Y) - \mathbf{s}(\hat{T})$$
 
 \begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{ican.png}
+		\includegraphics[width=0.5\textwidth]{ican.png}
 	\end{center}
 \end{figure}
 اگر جهت علّی از $X$ به $Y$ باشد، به راحتی دیده ‌می‌شود که خمی که این الگوریتم باز می‌گرداند منجر به این نتیجه می‌شود که 
 $\mathbf{var}\{\hat{N}_x\}<<\mathbf{var}\{\hat{N}_y\}$
-از این ویژگی برای این استفاده خواهیم کرد که وجود یک متغیر پنهان را تشخیص می‌دهیم.
+از این ویژگی برای این استفاده خواهیم کرد که وجود یک متغیر پنهان را تشخیص دهیم.  شبه کد این الگوریتم در صفحه‌‌ی بعد آورده شده است.
+
+مقاله اثباتی برای قابل‌شناسایی بودن،
+\lr{identifiability}
+برای  این الگوریتم ارائه می‌کند. نکته‌ی اصلی این مقاله این است که این قضیه تنها برای رژیمی که در آن واریانس نویز بسیار کم است ارائه شده و اثبات آن به شدت بر این فرض استوار است. داده‌های تجربی نشان می دهد که این روش می‌تواند در حالتی که واریانس نویز بزرگ است نیز موفق عمل کند، در نتیجه به نظر می‌رسد که قید کوچک بودن واریانس، تنها به دلیل ضعف اثبات است و انتظار می‌رود بتوان قضیه‌ی 
+\lr{identifiability}
+کلی‌ای، مشابه قضیه‌ی ارائه شده در
+\cite{hoyer}
+برای آن ارائه داد. این تلاش تا کنون ناموفق باقی مانده ‌است. از آن‌جا که اثبات تا حدی طولانی است، از آوردن  آن خودداری کردیم.
+
+
+\subsection{بررسی تجربی الگوریتم}
+\subsubsection{داده‌ی مصنوعی}
+یک بررسی الگوریتم که در مقاله مطرح شده، به این شیوه بوده است:
+ مدل
+\begin{equation*}
+\begin{cases}
+X = f(T) + N_X\\
+Y = g(T) + N_Y
+\end{cases}
+\end{equation*}
+را در نظر گرفته و توابع $u$  و  $v$ را به صورت  تصادفی به صورت ترکیب خطی از توابع گاوسی انتخاب می‌کند و ۲۰۰ نقطه با کمکم آن تولید می‌کند. توزیع نویز
+$U[−0.035,0.035]$
+است. آزمون فرضیه‌ی استقلال مورد استفاده، آزمون 
+\lr{HSIC}
+است. نتیجه‌ی این آزمایش به شدت امیدوارکننده است. دیده‌ می‌شود که الگوریتم به درستی قادر به تشخیص مقدار 
+\lr{confounder}
+است و تنها آن را در 
+$-1$
+ضرب کرده، یک پارامتری‌کردن دیگر خم. شکل
+\eqref{ican1}
+بررسی نتایج این الگوریتم بر داده‌ی یادشده است.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{ican1.png}
+	\end{center}
+	\caption{
+		بررسی مقدار متغیر پنهان در داده‌های مصنوعی که توسط الگوریتم تشخیص داده شده است و مقایسه‌ی آن با مقدار واقعی.
+	}
+\label{ican1}
+\end{figure}
+
+\subsubsection{داده‌ی واقعی}
+برای بررسی الگوریتم روی داده‌‌های واقعی، از داده‌ی معروف
+\lr{The
+	Automated
+	Surface
+	Observations
+	Systems
+	(ASOS) }
+استفاده شده است. این دیتاست‌ متشکل از داده‌های ارسالی چند ایستگاه است که هر دقیقه داده‌های آب و هوا را مخابره می‌کنند. از داده‌های فشار هوا که از ایستگاه‌های 
+\lr{KABE}
+و
+\lr{KABI}
+در سال ۲۰۰۰ گرفته شده استفاده شده است. انتظار بر این است زمان یک 
+\lr{confounder}
+برای آن‌ها باشد. الگوریتم نیز یک 
+\lr{confounder}
+تشخیص می‌دهد و نتایج آن به طور کامل با این فرض هم‌‌خوانی دارند. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{kabe.png}
+		\caption{
+			بررسی مقدار متغیر پنهان در دیتاست واقعی که توسط الگوریتم تشخیص داده شده است و مقایسه‌ی آن با مقدار واقعی. 
+		}
+	\end{center}
+\end{figure}
 
 \section{سری‌های زمانی}
+یکی از مدل‌های موفق و مبتنی بر محدود کردن مجموعه‌ی توابع، در سری‌های زمانی، الگوریتم‌های 
+\lr{TiMINo}
+است.
+\begin{den} \label{def:timino}
+	یک سری زمانی در نظر بگیرید.
+	$X_t=(X^i_t)_{i \in V}$،
+	به نحوی که توزیع‌های متناهی‌بعد آن تابع چگالی احتمال دارند. می‌گویم این سری زمانی یک 
+	\lr{TiMINo}
+	است اگر وجود داشته باشد
+$p>0$ 
+و 
+$\forall i \in V$ 
+مجموعه‌هایی وجود دارد که
+ $\textbf{PA}ـ{i}^{0} \subseteq X^{V\setminus\{i\}}, \textbf{PA}_{i}^{k} \subseteq X^V$، 
+ به نحوی که 
+  $\forall t$
+	\begin{align} \label{anm}
+	X^i_t = f_{i}\big((\textbf{PA}_i^p)_{t-p}, \ldots, (\textbf{PA}_i^1)_{t-1}, (\textbf{PA}_{i}^{0})_{t}, \eps^i_t\big)\,,
+	\end{align}
+که در آن 
+$\eps^i_t$ 
+(مشترکاً) مستقل هستند و برای هر $i$،
+$\eps^i_t$ 
+در زمان 
+\lr{identically distributed}
+است. همچنین فرض بر این است که 
+\lr{Full Time Graph}
+دور ندارد.
+\end{den}
+
+این مدل می‌تواند به راحتی به یک مدل نویز جمع شونده تبدیل شود. می‌توان با اندکی تلاش، از قضیه‌ی اثبات شده در 
+\cite{hoyer}
+برای دو متغیر و تعمیم آن در 
+\cite{continous}
+به یک قضیه‌ی 
+\lr{identifiability}
+برای سری‌های زمانی 
+\lr{TiMINo}
+با فرض نویز جمعی رسید.
+
+
+مقاله‌ی 
+\cite{time}
+الگوریتمی ساده برای یافتن جهت‌های علّی در 
+\lr{TiMINo}
+ارائه می‌کند. این الگوریتم شباهت زیادی به الگوریتم  
+\lr{RESIT}
+دارد.
+\begin{latin}
+\begin{algorithm}[h!]
+	\caption{TiMINo causality}
+	\begin{algorithmic}[1]
+		\STATE {\bfseries Input:} Samples from a $d$-dimensional time series of length $T$: $(\X_1, \ldots, \X_T)$, maximal order $p$\vspace{0.0cm}
+		\STATE $S:=(1, \ldots, d)$ 
+		\REPEAT
+		\FOR{$k$ in S}
+		\STATE Fit TiMINo for $X^k_t$ using $X^k_{t-p}, \ldots,$ $X^k_{t-1}, X^i_{t-p}, \ldots, X^i_{t-1}, X^i_t$ for $i \in S \setminus \{k\}$% (and $X^i_t$ for instantaneous effects).
+		\STATE Test if residuals are indep. of $X^i, i \in S$.  
+		\ENDFOR
+		\STATE Choose $k^*$ to be the $k$ with the weakest dependence. (If there is no $k$ with independence, break and output: ``I do not know - bad model fit'').
+		\STATE $S:=S \setminus \{k^*\}$
+		\STATE $\mathrm{pa}(k^*):=S$
+		\UNTIL{length(S)=1}
+		\STATE For all $k$ remove all unnecessary parents.\vspace{0.0cm}
+		%   \STATE Check the remaining indep. to verify the model.
+		%   \IF{model correct}
+		\STATE {\bfseries Output:} $(\mathrm{pa(1)}, \ldots, \mathrm{pa(d)})$
+		%   \ELSE
+		%   \STATE {\bfseries Output:} I do not know - bad model fit.
+		%   \ENDIF
+	\end{algorithmic}
+\end{algorithm}
+\end{latin}
+ایده‌ی این الگوریتم استفاده از یک روش رگرسیون برای 
+\lr{fit}
+کردن یک 
+\lr{TiMINo}
+بر داده‌ها است با این فرض که می‌خواهیم کمترین تعداد والد ممکن برای رسیدن به نویز مستقل را داشته باشیم. برای استفاده از این الگوریتم باید یک روش رگرسیون را مشخص کنیم. به طور خاص در این مقاله از روش‌های 
+\lr{gam}
+و
+\lr{GP}
+استفاده شده است.
+
+\subsection{
+	مزایای \lr{TiMINo} بر سایر روش‌ها
+}
+\lr{TiMINo}
+مزیت‌هایی بر سایر روش‌های تشخیص جهت علّی در سری‌های زمانی، به خصوص 
+\lr{Granger Causality}
+دارد که برخی از آنها را در ادامه خواهیم دید و مثال‌هایی از عملکرد روش ‌های مختلف خواهیم زد.
+\begin{itemize}
+	\item 
+	\lr{TiMINo}
+به وجود متغیر های مخفی نسبت به 
+\lr{Granger Causality}
+مقاوم‌تر است. علّت این مقاومت این است که در صورتی که موفق به مستقل کردن نویز‌ها نشود، بیان می کند که قادر به تشخیص جهت علّی نیست. به عنوان مثال به مثال زیر توجه کنید. در این گراف، $z$ یک متغیر پنهان است.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=\textwidth]{confounder.png}
+		\caption{
+تاثیر متغیر‌های پنهان در عملکرد الگوریتم‌های مختلف
+		}
+	\end{center}
+\end{figure}
+در این مثال با تغییر پارامتر‌ $a$ در گراف مشخص شده، نشان داده شده است که الگوریتم‌های مختلف در چه کسری از مواقع، 
+\lr{summary graph}
+اشتباهی را بازگرداند. مشاهده می‌شود با افزایش $a$، 
+\lr{Granger Causality}
+و 
+\lr{TS-LiNGAM}
+هر دو جهت را به عنوان جهت درست علّی معرفی می‌کنند ولی 
+\lr{TiMINo}
+همواره بیان ‌می‌کند که جهت قابل شناسایی نبود.
+\item 
+\lr{TiMINo}
+نیازی به فرض عدم وجود 
+\lr{instantaneous effect}
+ندارد. 
+ 
+ به عنوان مثال  سری‌های زمانی زیر را در نظر بگیرید.
+$X_t=A_1\cdot X_{t-1}+\eps_{X,t},
+W_t=A_2\cdot W_{t-1}+A_3\cdot X_{t}+\eps_{W,t},
+Y_t=A_4\cdot Y_{t-1}+A_5\cdot W_{t-1}+\eps_{Y,t},
+Z_t=A_6\cdot Z_{t-1}+A_7\cdot W_t+A_8\cdot Y_{t-1}+\eps_{Z,t}
+$
+
+$\eps_{\cdot, t} \sim 0.4 \cdot \mathcal N(0,1)$ 
+و
+ $A_i$ 
+ از توزیع
+$\mathcal{U}([-0.8,-0.2]\cup [0.2,0.8])$
+آمده است.
+در این بررسی، گراف
+ $X \rightarrow W \rightarrow Y \rightarrow Z$ و  $W \rightarrow Z$ 
+ را به عنوان گراف صحیح در نظر گرفته‌ایم. موفقیت الگوریتم‌های مختلف برای تشخیص جهت علّی بدین صورت است.
+ 
+ \begin{figure}[h!]
+ 	\begin{center}
+ 		\includegraphics[width=0.65\textwidth]{ts.png}
+ 		\caption{
+تاثیر اثرات آنی بر عملکرد الگوریتم‌های مختلف
+ 		}
+ 	\end{center}
+ \end{figure}
+مشاهده می‌شود که 
+\lr{TiMINo}
+مطابق انتظارات، توانسته از دو الگوریتم دیگر بسیار بهتر عمل کند.
+\item 
+ادعای بزرگ دیگری که در این مقاله مطرح شده اما به صورت تجربی آزمایش نشده این است که فرض کنید سیگنال‌ها از سورس‌های مختلف به ما می‌رسند و در نتیجه تاخیر‌های زمانی متفاوتی در دریافت آن‌ها داریم. به دلیل این تاخیر‌ها که از وجود آنها اطلاع نداریم، ممکن است جهت علّی معکوس در زمان نیز داشته باشیم. ادعا شده است که حتی در این حالت نیز
+\lr{TiMINo}
+قادر به تشخیص 
+\lr{summary graph}
+است.
+\end{itemize}
+
+به طور کلی، مقاله‌ی 
+\cite{time}،
+بررسی تجربی بسیار دقیقی روی 
+\lr{TiMINo}
+انجام می‌دهد. این مقاله، در مثال‌های واقعی زیادی الگوریتم 
+\lr{TiMINo}
+را آزمایش می‌کند. از جمله‌ی این آزمایش‌ها می‌توان به بررسی قیمت روزانه‌ی پنیر و کره پرداخت. انتظار این است که این دو سری زمانی، یک 
+\lr{confounder}
+مثل قیمت شیر داشته باشند. \lr{TiMINo} در این حالت جهت علّی تشخیص نمی‌دهد ولی دو روش 
+\lr{TS-LiNGAM}
+و
+\lr{Granger Causality}
+به اشتباه جهت‌هایی علّی ارائه می‌کنند.
+
+\section{پیشنهاد برای کار‌های پژوهشی آتی}
+به نظر من، در اولین قدم باید تلاشی برای یافتن یک قضیه‌ی 
+\lr{identifiability}
+کامل و بدون فرض کوچک بودن نویزها، که در 
+\cite{confounder}
+انجام شده است، انجام شود. این کار می‌تواند سنگ‌بنای کار‌های بزرگتری، مانند تعمیم نتایج آن و الگوریتم 
+\lr{ICAN}،
+به بعد‌های بالاتر باشد. 
+
+
+
+مقاله‌ی 
+\cite{continous}
+بررسی تجربی دقیقی بر الگوریتم 
+\lr{RESIT}
+انجام نداده است. بررسی دقیق عملکرد این الگوریتم و مشاهده‌ی 
+\lr{pithole}
+های آن می‌تواند شهود بسیار بهتری برای ارائه‌های الگوریتم‌های یادگیری ساختار علّی دیگر به ما بدهد.
+
+
+الگوریتم 
+\lr{TiMINo}
+به دلیل توانایی هندل کردن تاخیر‌های زمانی در سیگنال‌هایی که قصد یافتن جهت‌های علّی آن‌را داریم، می‌تواند در بررسی‌های 
+\lr{Fumctional Connectivity}
+در مغز بسیار مفید باشد. به طور خاص در داده‌های 
+\lr{fMRI}
+مشکل وجود تاخیر‌های مختلف زمانی مشاهده شده است.
+
+الگوریتم یادگیری مناسب و بهینه‌ای برای 
+ \lr{Post Non Linear Models}
+ وجود ندارد در حالی که به نظر می‌رسد این مدل‌ها تا حد زیادی مطابق اندازه‌گیری‌های ما از طبیعت باشند، زیرا تابع بیرونی می‌تواند اندازه‌گیری ما را مدل کند. به نظر من این مدل‌ها، پتانسیل این را دارند توصیف‌گر دقیق‌تری از طبیعت باشند. همچنین تعمیم این مدل به مدل
+ \begin{equation*}
+\begin{cases}
+X = N_X\\
+Y = f(g(X) + N_y) + N_*
+\end{cases}
+ \end{equation*}
+ با فرض استقلال
+$ N_x, N_y, N_*$
+ که در آن $N_*$ مدل‌کننده نویز اضافه شده بر دیتای اندازه‌گیری شده است و ارائه‌ی یک قضیه‌ی
+ \lr{identifiability}
+ احتمالی  برای این مدل‌ها خالی از لطف نیست.
 \bibliographystyle{acm-fa}
 \bibliography{bib}
 \end{document}

@@ -15,4 +15,9 @@
 \BOOKMARK [1][-]{section.5}{متغیر‌های پنهان}{}% 15
 \BOOKMARK [2][-]{subsection.5.1}{روش ساده‌لوحانه}{section.5}% 16
 \BOOKMARK [2][-]{subsection.5.2}{الگوریتم ICAN}{section.5}% 17
-\BOOKMARK [1][-]{section.6}{سری‌های زمانی}{}% 18
+\BOOKMARK [2][-]{subsection.5.3}{بررسی تجربی الگوریتم}{section.5}% 18
+\BOOKMARK [3][-]{subsubsection.5.3.1}{داده‌ی مصنوعی}{subsection.5.3}% 19
+\BOOKMARK [3][-]{subsubsection.5.3.2}{داده‌ی واقعی}{subsection.5.3}% 20
+\BOOKMARK [1][-]{section.6}{سری‌های زمانی}{}% 21
+\BOOKMARK [2][-]{subsection.6.1}{ مزایای TiMINo بر سایر روش‌ها }{section.6}% 22
+\BOOKMARK [1][-]{section.7}{پیشنهاد برای کار‌های پژوهشی آتی}{}% 23
